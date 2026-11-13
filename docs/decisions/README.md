@@ -9,8 +9,8 @@ decisions need the owner's "approved" plus the agent's justification (ADR-0001).
 |---|---|---|
 | [0001](0001-conventions.md) | Repo conventions and decision process | Proposed (teach-back pending on research rules) |
 | [0002](0002-repositories.md) | Template repo plus one repo per project | Accepted |
-| [0003](0003-sync-mac-hub.md) | Sync through the Mac hub with bare repos | Accepted |
-| [0004](0004-locations-and-storage.md) | Repo locations and large-storage symlinks | Accepted (neumann); SDumont pending |
+| [0003](0003-sync-mac-hub.md) | Sync through the Mac hub with bare repos | Superseded by 0012 |
+| [0004](0004-locations-and-storage.md) | Repo locations and large-storage symlinks | Accepted (neumann); bare repos and SDumont superseded by 0012 |
 | [0005](0005-cost-and-ask-first.md) | Cost accounting and ask-first limits | Accepted (partial) |
 | [0006](0006-language.md) | Language of docs and chat | Accepted |
 | [0007](0007-python-environments.md) | Python environments recorded per machine | Accepted |
@@ -18,6 +18,7 @@ decisions need the owner's "approved" plus the agent's justification (ADR-0001).
 | [0009](0009-cost-ledger-per-machine.md) | One cost ledger file per machine | Accepted |
 | [0010](0010-ledger-attribution-and-shared-extension-list.md) | Ledger attribution by WorkDir; shared blocked-extension list | Accepted |
 | [0011](0011-workflow-and-tasks.md) | Session and task workflow; tasks live in the status block | Accepted |
+| [0012](0012-github-origin-and-sdumont-locations.md) | GitHub as origin; SDumont locations | Accepted |
 
 ## Template
 

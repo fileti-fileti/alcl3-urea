@@ -59,9 +59,9 @@ A finished task leaves the block and goes to the journal entry (Done or Problems
    from the ledger.
 
 ## Two machines
-- VPNs are mutually exclusive: one machine at a time. Sync goes through the Mac (ADR-0003):
-  each server has a bare repo (`~/git/<repo>.git`, `origin`) plus a work clone; the Mac clone
-  has remotes `neumann` and `sdumont`. Pull at `/start-session`, push at `/end-session`.
+- `origin` is a private GitHub repo (ADR-0012): pull at `/start-session`, push at
+  `/end-session`; one deploy key per (repo, machine) behind an ssh alias `github-<repo>`.
+  Repos created before ADR-0012 keep their bare `origin` (`~/git/<repo>.git`) until migrated.
 - Scripts detect the machine from `hostname` and read `configs/machines/<machine>.yaml`
   (strict YAML subset, unknown keys rejected; `scripts/machine_config.py detect|show|validate`).
   Paths, partitions, modules, envs and cost unit live there, never hard-coded; `unknown`
@@ -130,12 +130,12 @@ A finished task leaves the block and goes to the journal entry (Done or Problems
   - Teach-back on the research rules of ADR-0001 (blocks any experiment doc or claim).
   - Check the session loop: `/end-session` → new session → `/start-session` (guide step 5).
 - Later:
-  - SDumont: setup F3/F4, bare repo + clone, ledger merge check.
+  - SDumont: setup F3/F4, first project from the bootstrap kit (ADR-0012), ledger merge check.
+  - lab-template on GitHub, so every machine has a `template` remote (ADR-0012).
   - Toy job on neumann to exercise `cost_ledger.py add` on a real job (needs the owner's ok).
   - Bring template changes into `~/sandbox` through its `template` remote (ADR-0002 path).
   - Env records for the Mac and SDumont (ADR-0007).
 - Waiting on owner: SDumont facts for ADR-0004/0005 (TODO(owner)).
 - Last sync — neumann: 2026-11-13, pushed to origin on top of `ac82332`
 - Last sync — sdumont: never (not cloned)
-- Last sync — mac: never (not cloned)
 <!-- END STATUS -->

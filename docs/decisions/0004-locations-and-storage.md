@@ -1,5 +1,6 @@
 # 0004. Repo locations and large-storage symlinks
-- Status: Accepted for neumann; SDumont pending (TODO(owner)).
+- Status: Accepted for neumann; bare-repo clause and SDumont part superseded by
+  [0012](0012-github-origin-and-sdumont-locations.md).
 - Date: 2026-11-13. Decided by: owner (Eudes Fileti). Process: infrastructure (approval).
 
 ## Context

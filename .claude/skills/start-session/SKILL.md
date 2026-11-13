@@ -12,12 +12,10 @@ Read-only: do not edit any file. Never invent a hash, job ID or number; write `u
    reality to check against. `--fetch` only updates remote-tracking refs.
 2. Read the `CLAUDE.md` status block, the newest entry of `docs/journal.md`, and every
    doc either of them hands off to (experiment docs, claims they name).
-3. Sync (ADR-0003): if the work tree is clean and the clone is only *behind* `origin`,
+3. Sync (ADR-0012): if the work tree is clean and the clone is only *behind* `origin`,
    run `git pull --ff-only origin main` (explain it in one line) and say what came in
    (`git log --oneline HEAD@{1}..HEAD`). If ahead, diverged or dirty: do not pull; report
    it under Mismatches.
-   On the Mac hub (remotes `neumann`/`sdumont`, no `origin`): report each remote's state;
-   do not pull or push without the owner.
 4. Compare: status-block claims vs git/queue/ledger facts; its Now tasks vs git and the
    queue (already done or blocked → Mismatches); "last sync" lines vs `git log`; jobs the journal expected vs the queue and the ended jobs (give their
    error lines or report numbers from their run dirs, if readable); results whose

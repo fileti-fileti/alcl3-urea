@@ -12,15 +12,17 @@ Run on the machine where the project starts (here: neumann). `<p>` is the projec
 Check: the owner approves a written summary, which goes into the project's first journal
 entry; the research question goes into the `CLAUDE.md` Project section.
 
-## 2. Repos (neumann)
+## 2. Repos (GitHub origin, ADR-0012)
+`<user>` is the owner's GitHub account. GitHub (owner, web): new **private** repo `<p>`,
+empty (no README, .gitignore or licence). Access from this machine: "GitHub access" below.
+On SDumont the bootstrap kit does steps 2, 3 and 5.
 ```bash
-git clone --bare ~/git/lab-template.git ~/git/<p>.git      # project bare repo = origin, starts from the template history
-git -C ~/git/<p>.git config receive.denyNonFastForwards true   # bare refuses history rewrites
-git -C ~/git/<p>.git config receive.denyDeletes true           # bare refuses branch/tag deletion
-git clone ~/git/<p>.git ~/<p>                               # work clone, origin = the bare repo
-cd ~/<p>
+git clone ~/git/lab-template.git <repo_parent>/<p>          # starts from the template history (neumann)
+cd <repo_parent>/<p>
+git remote rename origin template                           # template stays reachable for fixes (ADR-0002)
+git remote add origin git@github-<p>:<user>/<p>.git         # GitHub is origin
 git config core.hooksPath .githooks                         # turn on the pre-commit hook (per clone)
-git remote add template ~/git/lab-template.git              # to bring template fixes later (ADR-0002)
+git ls-remote origin                                        # reachable; empty output = empty repo
 ```
 
 ## 3. Large storage (symlinks, ADR-0004)
@@ -50,16 +52,30 @@ python3 -I -m unittest discover -s tests
 python3 scripts/machine_config.py detect                     # prints this machine
 python3 scripts/session_facts.py                             # every section readable
 ```
-Then commit `chore: start project <p> from lab-template` and `git push origin main`.
+Then commit `chore: start project <p> from lab-template` and `git push -u origin main`
+(`-u`: the first push sets `origin/main` as upstream).
 
-## 6. The other machine (through the Mac hub, ADR-0003)
-One VPN at a time. On the other server, once: create `~/git/<p>.git` (bare, same two
-`receive.*` settings). On the Mac:
+## 6. The other machine
+Add a deploy key for that machine ("GitHub access"), then:
 ```bash
-git clone neumann:git/<p>.git ~/<p> && cd ~/<p>             # Mac clone (VPN neumann)
-git remote rename origin neumann                            # name remotes after machines
-git remote add sdumont sdumont:<path>/git/<p>.git           # TODO(owner): SDumont path (ADR-0004)
-git push sdumont main                                       # (VPN sdumont) seed the second bare
+git clone git@github-<p>:<user>/<p>.git <repo_parent>/<p>   # same history as the first machine
 ```
-On the other server: `git clone <bare> <repo_parent>/<p>`, then steps 2 (hooksPath,
-template remote), 3 and 5 there.
+Then step 2's `core.hooksPath` (and the `template` remote where lab-template is reachable),
+steps 3 and 5 there.
+
+## GitHub access (one deploy key per repo and machine, ADR-0012)
+The owner types (including any passphrase):
+```bash
+ssh-keygen -t ed25519 -f ~/.ssh/github_<p> -C "<p>@<machine>"   # deploy key: this repo only
+```
+GitHub → repo → Settings → Deploy keys → add `~/.ssh/github_<p>.pub`, tick *Allow write
+access*. Then in `~/.ssh/config`:
+```
+Host github-<p>
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/github_<p>
+  IdentitiesOnly yes
+```
+Check: `ssh -T github-<p>` (GitHub greets the repo: the key works). If port 22 is blocked:
+`HostName ssh.github.com` and `Port 443`.

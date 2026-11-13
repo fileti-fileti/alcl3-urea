@@ -1,5 +1,5 @@
 # 0003. Sync through the Mac hub with bare repos
-- Status: Accepted
+- Status: Superseded by [0012](0012-github-origin-and-sdumont-locations.md)
 - Date: 2026-11-13. Decided by: owner (Eudes Fileti). Process: infrastructure (approval).
 
 ## Context

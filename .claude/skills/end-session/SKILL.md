@@ -33,4 +33,5 @@ or registered files only.
    as they are.
 7. Show the diffs (`git diff`), run `python3 -I -m unittest discover -s tests`, then
    commit as `docs: end-of-session log YYYY-MM-DD` and `git push origin main` (asks).
-8. Say what the owner must do next for the other machine (sync through the Mac hub).
+8. Say what the owner must do next on the other machine (its `/start-session` pulls
+   from `origin`).
