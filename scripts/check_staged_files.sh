@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
-# Block staged files that must never enter git: data/, runs/, logs/, checkpoints,
-# arrays, archives, datasets (extxyz), trajectories/wavefunctions, databases,
-# and any blob over MAX_BYTES. Plain .xyz (initial geometries) only hits the size limit.
+# Block staged files that must never enter git: anything under data/, runs/, logs/,
+# and the extensions in scripts/blocked_extensions.txt (shared with register_result.py),
+# and any blob over MAX_BYTES.
 # Portable: bash 3.2 (macOS) and Linux. Called by .githooks/pre-commit.
 set -u
 MAX_BYTES=$((1024 * 1024))   # 1 MiB, guide rule
 
-blocked_ext='pt pth ckpt model pb h5 hdf5 npy npz pkl pickle
-tar gz tgz bz2 xz zst zip 7z
-wfn restart bak cube dcd xtc trr lammpstrj
-extxyz traj nc db sqlite'
+ext_file="$(git rev-parse --show-toplevel)/scripts/blocked_extensions.txt"
+if [ ! -r "$ext_file" ]; then
+  echo "BLOCKED: $ext_file missing; refusing to commit without the extension list" >&2
+  exit 1
+fi
+blocked_ext=$(sed 's/#.*//' "$ext_file" | tr '[:upper:]' '[:lower:]')
 
 fail=0
 while IFS= read -r -d '' f; do

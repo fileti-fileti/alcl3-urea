@@ -16,6 +16,7 @@ decisions need the owner's "approved" plus the agent's justification (ADR-0001).
 | [0007](0007-python-environments.md) | Python environments recorded per machine | Accepted |
 | [0008](0008-legacy-results.md) | Legacy work stays in place; registered as legacy-* | Accepted |
 | [0009](0009-cost-ledger-per-machine.md) | One cost ledger file per machine | Accepted |
+| [0010](0010-ledger-attribution-and-shared-extension-list.md) | Ledger attribution by WorkDir; shared blocked-extension list | Accepted |
 
 ## Template
 

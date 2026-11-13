@@ -46,8 +46,9 @@ rules and conventions only. Keep it under ~160 lines; history goes to `docs/jour
 - Scripts detect the machine from `hostname` and read `configs/machines/<machine>.yaml`
   (validated; unknown keys rejected). Paths, partitions, modules, envs and cost unit live
   there, never hard-coded.
-- Scripts in `scripts/` use the Python standard library only and must not rely on the
-  active conda env (neumann auto-activates `deepmd_intel` in interactive shells only).
+- Scripts in `scripts/` use the Python standard library only, run on Python >= 3.6
+  (neumann `/usr/bin/python3` is 3.6.8) and must not rely on the active conda env
+  (neumann auto-activates `deepmd_intel` in interactive shells only).
   Job scripts activate their env explicitly, from the machine YAML.
 - neumann: `/home` is NFS-exported to the nodes; `/scratch` exists on the headnode only.
 - SDumont: the login node limits CPU time per process (`ulimit -t 1800`); heavy interactive
@@ -67,12 +68,14 @@ rules and conventions only. Keep it under ~160 lines; history goes to `docs/jour
   `scripts/register_result.py`; never hand-edited. Legacy results enter as `legacy-*`
   (ADR-0008).
 - **Cost**: one ledger per machine, `results/cost_ledger_<machine>.csv`, appended by
-  `scripts/cost_ledger.py` from scheduler accounting; failed and cancelled jobs count
-  (ADR-0005, ADR-0009).
+  `scripts/cost_ledger.py` from scheduler accounting; failed and cancelled jobs count.
+  Only jobs submitted under `runs/` (or given with `--jobs`) are charged to the project
+  (ADR-0005, ADR-0009, ADR-0010).
 - **Runs** record the exact commit (`git rev-parse HEAD`) and refuse a dirty tree.
 - **Never in git**: `data/`, `runs/`, `logs/` (gitignored; symlinks to large storage),
-  checkpoints, arrays, archives, datasets, trajectories, files > 1 MiB. Enforced by
-  `.githooks/pre-commit` → `scripts/check_staged_files.sh`.
+  extensions in `scripts/blocked_extensions.txt` (checkpoints, arrays, archives,
+  datasets, trajectories), files > 1 MiB. Enforced by `.githooks/pre-commit` →
+  `scripts/check_staged_files.sh`.
 - Docs in English; chat with the owner in Portuguese (ADR-0006).
 - Commit messages: `<type>: <summary>` (feat, fix, docs, chore, test).
 
@@ -92,14 +95,14 @@ rules and conventions only. Keep it under ~160 lines; history goes to `docs/jour
 ## New clone checklist
 1. `git config core.hooksPath .githooks` (turns on the pre-commit hook; per clone).
 2. Create the `data`, `runs`, `logs` symlinks to the machine's storage (project repos only).
-3. Run the tests: TODO: command fixed when the scripts exist (setup F5, block 3).
+3. Run the tests: `python3 -I -m unittest discover -s tests` (stdlib only).
 
 ## Status
 <!-- BEGIN STATUS -->
 - Updated: 2026-11-13 — neumann
 - Phase: template under construction (setup F5). Done: layout, .gitignore, pre-commit hook,
-  CLAUDE.md, docs skeleton, ADRs 0001-0009 (0001 Proposed). Next: scripts with tests,
-  machine YAMLs, settings, skills.
+  CLAUDE.md, docs skeleton, ADRs 0001-0010 (0001 Proposed), scripts with tests.
+  Next: machine YAMLs, settings, skills.
 - Last sync — neumann: `02e5187` 2026-11-13 (bare = work clone)
 - Last sync — sdumont: never (not cloned)
 - Last sync — mac: never (not cloned)
