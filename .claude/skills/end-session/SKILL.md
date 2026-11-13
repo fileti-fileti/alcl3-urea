@@ -15,7 +15,7 @@ or registered files only.
    `configs/machines/`). With an empty ledger add `--since <date of the first journal
    entry>`. Report rows added and the "outside the project skipped" count;
    if a project job was skipped (submitted outside `runs/`), ask the owner and add it with
-   `--jobs`.
+   `--jobs`. No `runs/` in the repo (the template): skip this step and say so.
 3. Results: for each experiment that ended this session, ask the owner which run dir and
    globs to register, then `python3 scripts/register_result.py <name> <run_dir> '<glob>'`
    and `--check <name>`. Update its claim in `docs/claims.md` only by applying the rule
@@ -25,9 +25,12 @@ or registered files only.
    `## YYYY-MM-DD — <machine> — <short title>` with Goal / Done (commit hashes, job IDs) /
    Results / Decisions / Problems (job IDs, error lines, root cause) / Next.
 6. Status block: replace everything between the STATUS markers with the current state
-   only (move history to the journal). Keep one "Last sync — <machine>" line per machine;
-   update this machine's line to `YYYY-MM-DD, end-of-session commit on top of <short hash
-   of HEAD before this commit>`; leave other machines' lines as they are.
+   only, in these fields (ADR-0011): `Updated: YYYY-MM-DD — <machine>`, `State`, `Now`,
+   `Later`, `Waiting on owner`, then one `Last sync — <machine>` line per machine.
+   One line per task; tasks finished this session leave Now/Later (they are in the
+   journal entry). Update this machine's Last sync line to `YYYY-MM-DD, end-of-session
+   commit on top of <short hash of HEAD before this commit>`; leave other machines' lines
+   as they are.
 7. Show the diffs (`git diff`), run `python3 -I -m unittest discover -s tests`, then
    commit as `docs: end-of-session log YYYY-MM-DD` and `git push origin main` (asks).
 8. Say what the owner must do next for the other machine (sync through the Mac hub).

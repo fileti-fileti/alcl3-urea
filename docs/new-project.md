@@ -36,11 +36,12 @@ Submit project jobs from a directory under `runs/`, so the ledger can attribute 
 
 ## 4. Make it the project's repo
 - `CLAUDE.md`: replace the Project section (research question, data locations per
-  machine, legacy dirs); reset the status block (Last sync lines: this machine = today,
-  others = never).
+  machine, legacy dirs); reset the status block (fields per ADR-0011; Now = the project's
+  first tasks; Last sync lines: this machine = today, others = never).
 - `docs/journal.md`: first entry `## YYYY-MM-DD — <machine> — Project start` with the
   interview summary.
-- Project ADRs from 0011 on (decisions of the interview that differ from the template).
+- Project ADRs take the next free number (decisions of the interview that differ from
+  the template).
 - Experiments: copy `docs/experiment-template.md`.
 
 ## 5. Checks

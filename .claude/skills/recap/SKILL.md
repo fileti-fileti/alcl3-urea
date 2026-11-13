@@ -16,4 +16,4 @@ Read-only. Never invent a hash, job ID or number; write `unknown`.
    what was decided and why (cite the ADR), what failed and the root cause.
 3. Then a list "Termos" defining every technical term or acronym you used, one line each,
    using `docs/glossary.md` when it has the term.
-4. End with where things stand now and the next step from the status block.
+4. End with where things stand now (status block State) and its Now tasks.

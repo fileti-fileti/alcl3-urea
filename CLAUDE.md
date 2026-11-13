@@ -39,6 +39,25 @@ rules and conventions only. Keep it under ~160 lines; history goes to `docs/jour
 - **Style:** simplest design, surgical changes, a check for every step (then run it). Show
   the diff before editing an existing file.
 
+## Workflow
+**Session loop** (one machine per session): `/start-session` (read-only recap,
+fast-forward pull) → work the *Now* tasks → `/end-session` (journal, status, ledger,
+results, commit, push). Skills in `.claude/skills/`; their facts come from
+`python3 scripts/session_facts.py`.
+
+**Tasks** live only in the status block (ADR-0011): *Now* (this session), *Later*
+(backlog), *Waiting on owner* (blocked on the owner's decision or a fact). One line each.
+A finished task leaves the block and goes to the journal entry (Done or Problems).
+
+**Task loop** — every step has a check; run it and report its output:
+1. Decision involved? Research/methodology → teach-back; infrastructure → owner's
+   "approved". Either way an ADR before it is applied.
+2. Run that will support a claim or comparison? Copy `docs/experiment-template.md`, fix
+   the reading rule and add the *pending* claim before anything runs.
+3. Job? Ask first; submit from a dir under `runs/`, clean tree, commit recorded.
+4. Ended? At `/end-session`: register results, apply the fixed rule to the claim, cost
+   from the ledger.
+
 ## Two machines
 - VPNs are mutually exclusive: one machine at a time. Sync goes through the Mac (ADR-0003):
   each server has a bare repo (`~/git/<repo>.git`, `origin`) plus a work clone; the Mac clone
@@ -78,16 +97,13 @@ rules and conventions only. Keep it under ~160 lines; history goes to `docs/jour
   datasets, trajectories), files > 1 MiB. Enforced by `.githooks/pre-commit` →
   `scripts/check_staged_files.sh`.
 - Docs in English; chat with the owner in Portuguese (ADR-0006).
-- **Session routines** (`.claude/skills/`): `/start-session` (read-only + fast-forward
-  pull), `/end-session` (journal, status, ledger, results, commit, push), `/recap`.
-  Facts come from `python3 scripts/session_facts.py`.
-- Experiments start from `docs/experiment-template.md`.
 - Commit messages: `<type>: <summary>` (feat, fix, docs, chore, test).
 
 ## Where things live
 | Question | Place |
 |---|---|
 | What is true now? | status block below |
+| What do we do next? | status block: Now / Later / Waiting on owner |
 | What happened? | `docs/journal.md` |
 | Why is it built this way? | `docs/decisions/` |
 | What can we state? | `docs/claims.md` |
@@ -108,13 +124,18 @@ rules and conventions only. Keep it under ~160 lines; history goes to `docs/jour
 ## Status
 <!-- BEGIN STATUS -->
 - Updated: 2026-11-13 — neumann
-- Phase: template under construction (setup F5). Done: layout, .gitignore, pre-commit hook,
-  CLAUDE.md, docs skeleton, ADRs 0001-0010 (0001 Proposed), scripts with tests, machine
-  YAMLs, repo settings, neumann env record, skills, new-project doc.
-  Next: sandbox from the template, toy job (needs the owner's ok), session checks.
+- State: template skeleton on neumann (layout, hook, scripts with tests, machine YAMLs,
+  repo settings, skills, docs, ADRs 0001-0011; 0001 Proposed). Not set up on SDumont.
+- Now:
+  - Teach-back on the research rules of ADR-0001 (blocks any experiment doc or claim).
+  - Check the session loop: `/end-session` → new session → `/start-session` (guide step 5).
+- Later:
+  - SDumont: setup F3/F4, bare repo + clone, ledger merge check.
+  - Toy job on neumann to exercise `cost_ledger.py add` on a real job (needs the owner's ok).
+  - Bring template changes into `~/sandbox` through its `template` remote (ADR-0002 path).
+  - Env records for the Mac and SDumont (ADR-0007).
+- Waiting on owner: SDumont facts for ADR-0004/0005 (TODO(owner)).
 - Last sync — neumann: 2026-11-13, pushed to origin on top of `ac82332`
 - Last sync — sdumont: never (not cloned)
 - Last sync — mac: never (not cloned)
-- Waiting on owner: teach-back on the research rules of ADR-0001; SDumont parts of
-  ADR-0004/0005 (TODO(owner)).
 <!-- END STATUS -->
