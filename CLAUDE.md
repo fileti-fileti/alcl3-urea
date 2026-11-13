@@ -7,8 +7,8 @@ rules and conventions only. Keep it under ~160 lines; history goes to `docs/jour
 ## Project
 - `lab-template` is the template for MLFF research repos (MACE/DeePMD, CP2K, LAMMPS, GROMACS)
   across two machines: **neumann** (UNIFESP, own cluster) and **sdumont** (LNCC).
-- Projects are created from it (`docs/new-project.md`, TODO: written in a later block); each
-  project replaces this section with its research question and data locations.
+- Projects are created from it by `docs/new-project.md`; each project replaces this
+  section with its research question and data locations.
 - Experiment parts (`docs/<experiment>.md`, `docs/claims.md`) exist here as skeletons only
   (ADR-0001).
 
@@ -78,6 +78,10 @@ rules and conventions only. Keep it under ~160 lines; history goes to `docs/jour
   datasets, trajectories), files > 1 MiB. Enforced by `.githooks/pre-commit` →
   `scripts/check_staged_files.sh`.
 - Docs in English; chat with the owner in Portuguese (ADR-0006).
+- **Session routines** (`.claude/skills/`): `/start-session` (read-only + fast-forward
+  pull), `/end-session` (journal, status, ledger, results, commit, push), `/recap`.
+  Facts come from `python3 scripts/session_facts.py`.
+- Experiments start from `docs/experiment-template.md`.
 - Commit messages: `<type>: <summary>` (feat, fix, docs, chore, test).
 
 ## Where things live
@@ -106,8 +110,9 @@ rules and conventions only. Keep it under ~160 lines; history goes to `docs/jour
 - Updated: 2026-11-13 — neumann
 - Phase: template under construction (setup F5). Done: layout, .gitignore, pre-commit hook,
   CLAUDE.md, docs skeleton, ADRs 0001-0010 (0001 Proposed), scripts with tests, machine
-  YAMLs, repo settings, neumann env record. Next: skills, new-project doc, sandbox.
-- Last sync — neumann: `02e5187` 2026-11-13 (bare = work clone)
+  YAMLs, repo settings, neumann env record, skills, new-project doc.
+  Next: sandbox from the template, toy job (needs the owner's ok), session checks.
+- Last sync — neumann: 2026-11-13, pushed to origin on top of `ac82332`
 - Last sync — sdumont: never (not cloned)
 - Last sync — mac: never (not cloned)
 - Waiting on owner: teach-back on the research rules of ADR-0001; SDumont parts of
