@@ -44,8 +44,9 @@ rules and conventions only. Keep it under ~160 lines; history goes to `docs/jour
   each server has a bare repo (`~/git/<repo>.git`, `origin`) plus a work clone; the Mac clone
   has remotes `neumann` and `sdumont`. Pull at `/start-session`, push at `/end-session`.
 - Scripts detect the machine from `hostname` and read `configs/machines/<machine>.yaml`
-  (validated; unknown keys rejected). Paths, partitions, modules, envs and cost unit live
-  there, never hard-coded.
+  (strict YAML subset, unknown keys rejected; `scripts/machine_config.py detect|show|validate`).
+  Paths, partitions, modules, envs and cost unit live there, never hard-coded; `unknown`
+  marks an unverified fact and is never replaced by a guess.
 - Scripts in `scripts/` use the Python standard library only, run on Python >= 3.6
   (neumann `/usr/bin/python3` is 3.6.8) and must not rely on the active conda env
   (neumann auto-activates `deepmd_intel` in interactive shells only).
@@ -91,18 +92,21 @@ rules and conventions only. Keep it under ~160 lines; history goes to `docs/jour
 | What does this word mean? | `docs/glossary.md` |
 | Who said so? | `docs/references.bib` (entry only after a Crossref/arXiv check) |
 | Machine facts | `configs/machines/<machine>.yaml` |
+| Python envs (record only) | `envs/<machine>.environment.yml` |
+| Agent permissions | `.claude/settings.json` (ask: jobs, push; deny: force-push, `rm -rf`, edits in `results/`) |
 
 ## New clone checklist
 1. `git config core.hooksPath .githooks` (turns on the pre-commit hook; per clone).
 2. Create the `data`, `runs`, `logs` symlinks to the machine's storage (project repos only).
 3. Run the tests: `python3 -I -m unittest discover -s tests` (stdlib only).
+4. `scripts/machine_config.py detect` prints this machine's name (else add/fix its YAML).
 
 ## Status
 <!-- BEGIN STATUS -->
 - Updated: 2026-11-13 — neumann
 - Phase: template under construction (setup F5). Done: layout, .gitignore, pre-commit hook,
-  CLAUDE.md, docs skeleton, ADRs 0001-0010 (0001 Proposed), scripts with tests.
-  Next: machine YAMLs, settings, skills.
+  CLAUDE.md, docs skeleton, ADRs 0001-0010 (0001 Proposed), scripts with tests, machine
+  YAMLs, repo settings, neumann env record. Next: skills, new-project doc, sandbox.
 - Last sync — neumann: `02e5187` 2026-11-13 (bare = work clone)
 - Last sync — sdumont: never (not cloned)
 - Last sync — mac: never (not cloned)

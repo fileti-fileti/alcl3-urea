@@ -26,6 +26,9 @@ import subprocess
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import machine_config  # noqa: E402  (same directory; works under python -I too)
+
 MAX_BYTES = 1024 * 1024
 PROVENANCE = "PROVENANCE.json"
 EXT_FILE = "scripts/blocked_extensions.txt"
@@ -144,9 +147,14 @@ def register(repo, name, run_dir, patterns, update=False):
                 st.st_mtime, datetime.timezone.utc).replace(microsecond=0).isoformat(),
         })
     rc, head = git(repo, "rev-parse", "HEAD")
+    try:
+        machine = machine_config.detect(repo)
+    except machine_config.ConfigError:
+        machine = "unknown"
     prov = {
         "name": name,
         "registered_at": now_utc(),
+        "machine": machine,
         "hostname": socket.gethostname(),
         "repo_commit": head if rc == 0 else "unknown",
         "source_dir": str(run_dir),

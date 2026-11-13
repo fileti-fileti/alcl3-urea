@@ -2,7 +2,7 @@
 """Cost ledger: one CSV per machine, results/cost_ledger_<machine>.csv (ADR-0009, ADR-0010).
 
 Usage:
-  cost_ledger.py add --machine M --unit U [--since YYYY-MM-DD] [--workdir DIR ...]
+  cost_ledger.py add [--machine M] [--unit U] [--since YYYY-MM-DD] [--workdir DIR ...]
                      [--jobs ID[,ID...]] [--sacct-file F] [--dry-run]
   cost_ledger.py sum --jobs ID[,ID...]      (ID or machine:ID; reads every ledger)
 
@@ -13,6 +13,9 @@ the directory it resolves to) or inside a --workdir given explicitly; or the job
 with --jobs. Never "all jobs of the user": other projects share the account.
 With an empty ledger --since is required (unless --jobs); otherwise it defaults to the
 latest recorded end date. --sacct-file reads saved `sacct -X -n -P -o <FIELDS>` output.
+
+--machine defaults to the machine detected from the hostname (configs/machines/*.yaml)
+and --unit to that machine's cost.unit.
 
 Cost estimate: unit "core-hours" = ElapsedRaw x AllocCPUS / 3600. Any other unit is
 written as "unknown" until its conversion is known (ADR-0005). `sum` reports totals per
@@ -29,6 +32,9 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import machine_config  # noqa: E402  (same directory; works under python -I too)
 
 DEFAULT_REPO = Path(__file__).resolve().parent.parent
 FIELDS = ["JobID", "JobName", "Partition", "State", "ExitCode",
@@ -209,8 +215,8 @@ def main(argv=None):
     ap.add_argument("--repo", default=str(DEFAULT_REPO), help=argparse.SUPPRESS)
     sub = ap.add_subparsers(dest="cmd")
     a_add = sub.add_parser("add", help="append ended jobs of this project from sacct")
-    a_add.add_argument("--machine", required=True)
-    a_add.add_argument("--unit", required=True)
+    a_add.add_argument("--machine", help="default: detected from hostname")
+    a_add.add_argument("--unit", help="default: cost.unit of the machine config")
     a_add.add_argument("--since", help="YYYY-MM-DD (required for an empty ledger)")
     a_add.add_argument("--workdir", action="append", help="count jobs submitted under DIR")
     a_add.add_argument("--jobs", help="ID[,ID...]: add exactly these jobs")
@@ -227,7 +233,9 @@ def main(argv=None):
                 with io.open(a.sacct_file) as f:
                     text = f.read()
             jobs = split_ids(a.jobs) if a.jobs else None
-            path, since, new, skipped = add(repo, a.machine, a.unit, a.since, text,
+            machine = a.machine or machine_config.detect(repo)
+            unit = a.unit or machine_config.load(machine, repo)["cost"]["unit"]
+            path, since, new, skipped = add(repo, machine, unit, a.since, text,
                                             a.dry_run, a.workdir, jobs)
             verb = "would add" if a.dry_run else "added"
             for r in new:
@@ -247,7 +255,7 @@ def main(argv=None):
             return 0
         ap.print_help()
         return 2
-    except LedgerError as e:
+    except (LedgerError, machine_config.ConfigError) as e:
         print("ERROR: {}".format(e), file=sys.stderr)
         return 1
 

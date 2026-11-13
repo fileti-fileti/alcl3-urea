@@ -1,0 +1,33 @@
+# SDumont (LNCC), project acmes. Server checks done 2026-11-13 (setup F3, partial);
+# items marked "owner-reported" come from the owner and were not verified on the server.
+# `unknown` = not verified yet; scripts treat it as unavailable. Never guess a value.
+name: sdumont
+hostnames:
+  - "sdumont[0-9]*"   # login nodes sdumont17/sdumont18 seen; TODO(owner): compute-node hostnames
+scheduler: slurm
+cost:
+  unit: unknown       # TODO(owner): allocation unit and conversion from sacct (ADR-0005)
+  source: sacct
+storage:
+  repo_parent: unknown                              # TODO(owner): ADR-0004, after purge rule is known
+  store_parent: /scratch/acmes/eudes.fileti3/projects   # owner-reported area; sandbox-store proposed here
+  purge: unknown                                    # TODO(owner): /scratch purge rule (LNCC)
+  notes: "$HOME=/prj/acmes/eudes.fileti3 (NFS, 250G); /scratch Lustre; login ulimit -t 1800"
+partitions:           # owner-reported
+  - sequana_cpu
+  - sequana_cpu_long
+  - sequana_cpu_dev
+  - sequana_cpu_bigmem
+  - sequana_cpu_bigmem_long
+  - sequana_gpu
+  - sequana_gpu_long
+  - sequana_gpu_dev
+toy_job_partition: sequana_cpu_dev
+modules:
+  cp2k: unknown       # TODO(owner)
+  gromacs: unknown
+  lammps: unknown     # TODO(owner): LAMMPS+MACE build
+python:
+  conda_sh: unknown   # TODO(owner)
+  envs:
+    - /scratch/acmes/eudes.fileti3/projects/shared/envs/mace_env   # owner-reported; untouchable
