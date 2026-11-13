@@ -14,7 +14,8 @@ class FactsTest(unittest.TestCase):
         self.repo = self.t.repo
         shutil.copy(str(ROOT / "CLAUDE.md"), str(self.repo))
         (self.repo / "docs").mkdir()
-        shutil.copy(str(ROOT / "docs" / "journal.md"), str(self.repo / "docs"))
+        # Own fixture: a project's real journal has entries, the test needs an empty one.
+        (self.repo / "docs" / "journal.md").write_text("# Journal\n\n<!-- NEW ENTRIES BELOW -->\n")
         shutil.copytree(str(ROOT / "configs"), str(self.repo / "configs"))
         run(["git", "add", "-A"], self.repo)
         run(["git", "commit", "-qm", "base"], self.repo)
