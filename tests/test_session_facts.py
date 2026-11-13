@@ -50,6 +50,14 @@ class FactsTest(unittest.TestCase):
         self.assertEqual(rc, 0)
         self.assertIn("unavailable", out)
 
+    def test_empty_ledger_uses_status_date(self):
+        import os
+        os.symlink(str(self.t.ext), str(self.repo / "runs"))
+        cfg = {"cost": {"unit": "core-hours"}}
+        out = sf.unledgered(self.repo, "neumann", cfg)
+        if "sacct not found" not in out:
+            self.assertIn("since 2026-", out)
+
     def test_dirty_tree_reported(self):
         (self.repo / "new.txt").write_text("x\n")
         self.assertIn("1 path(s)", sf.git_facts(self.repo, fetch=False))

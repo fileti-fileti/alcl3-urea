@@ -12,7 +12,8 @@ or registered files only.
 1. Run `python3 scripts/session_facts.py` and `git log --oneline` since the last
    end-of-session commit (`git log --grep 'end-of-session log' -1`).
 2. Cost: `python3 scripts/cost_ledger.py add` (machine and unit come from
-   `configs/machines/`). Report rows added and the "outside the project skipped" count;
+   `configs/machines/`). With an empty ledger add `--since <date of the first journal
+   entry>`. Report rows added and the "outside the project skipped" count;
    if a project job was skipped (submitted outside `runs/`), ask the owner and add it with
    `--jobs`.
 3. Results: for each experiment that ended this session, ask the owner which run dir and

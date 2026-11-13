@@ -130,8 +130,15 @@ def unledgered(repo, machine, cfg):
         return "unavailable: machine unknown"
     if not shutil.which("sacct"):
         return "unavailable: sacct not found on this machine"
+    since = None
+    if not cost_ledger.read_ledger(cost_ledger.ledger_path(repo, machine)):
+        m = re.search(r"Updated: (\d{4}-\d{2}-\d{2})", status_block(repo))
+        if not m:
+            return "unavailable: empty ledger and no 'Updated: YYYY-MM-DD' in the status block"
+        since = m.group(1)                   # empty ledger: look back to the last status update
     try:
-        _, since, new, skipped = cost_ledger.add(repo, machine, cfg["cost"]["unit"], dry_run=True)
+        _, since, new, skipped = cost_ledger.add(repo, machine, cfg["cost"]["unit"],
+                                                 since=since, dry_run=True)
     except cost_ledger.LedgerError as e:
         return "unavailable: {}".format(e)
     rows = ["- {} {} {} exit {} end {} cost {} {}".format(
