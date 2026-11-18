@@ -132,7 +132,7 @@ def repo_state():
         head = subprocess.check_output(["git", "-C", here, "rev-parse", "HEAD"],
                                        universal_newlines=True).strip()
         dirty = subprocess.check_output(["git", "-C", here, "status", "--porcelain", "--",
-                                         "src/"], universal_newlines=True).strip()
+                                         "."], universal_newlines=True).strip()
     except (OSError, subprocess.CalledProcessError):
         return "unknown", True
     return head, bool(dirty)
