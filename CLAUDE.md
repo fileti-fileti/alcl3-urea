@@ -11,8 +11,8 @@ rules and conventions only. Keep it under ~160 lines; history goes to `docs/jour
   active learning) -> ns MLMD (LAMMPS); species by the bond graph of SI S2.2.
 - Set-up: SI draft v0.3 (2026-10-14), dataset report for Davi (2026-10-24): 15 seeds (3 r x
   5 speciation hypotheses), CP2K PBE-D3(BJ)/DZVP, NVT 0.5 fs, 1 + 5 ps, 30 runs at 333-450 K.
-- Claim reach: AIMD frames are training data only (SI S6.1); speciation claims need MLMD
-  populations that agree from opposite seeds.
+- Claim reach: AIMD gives training frames and RDFs (per-seed local structure at 333 K only;
+  reference for MLMD tests; `docs/rdf.md`). Speciation needs MLMD agreeing from opposite seeds.
 - Labels: one reference level, CP2K version and input for every frame, never mixed with
   sampling energies; splits by trajectory, never by frame.
 - **Confidential** (unpublished): nothing goes to an external service; structures,

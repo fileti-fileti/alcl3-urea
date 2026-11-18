@@ -14,4 +14,15 @@ result and never changed afterwards; a changed rule makes a new claim.
 - Method: link to the doc section. Jobs: IDs. Cost: from the ledger
 ```
 
-(No claims yet.)
+### RDF-1. Local structure of each seed at 333 K from AIMD, PBE-D3(BJ)/DZVP (pending)
+- Rule, fixed before the result: `docs/rdf.md` (Reading rule): r1, g(r1) and CN at rmin
+  ± block SE, per pair and per seed; descriptive only.
+- Limits: per seed, never the equilibrium liquid (seed memory, 5 ps); 333 K only; 4 of the
+  8 runs at 333 K are on neumann (r10_ion, r10_mist, r13_ionA, r13_mist).
+- Evidence: `results/rdf-aimd-v1/`.
+
+### RDF-2. A MACE model reproduces the AIMD RDFs of runs held out of its training (pending)
+- Rule, fixed before the result: `docs/rdf.md` (Comparison): per pair, r1, g(r1) and CN at
+  the AIMD rmin; differs if |Δ| > 2 × combined SE, else agrees; inconclusive if the MLMD
+  run does not repeat the AIMD run or the run was in the training set.
+- Evidence: `results/rdf-aimd-v1/` and the MLMD RDFs (not yet run).
