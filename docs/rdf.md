@@ -67,6 +67,8 @@ reach below.
   `src/rdf.py aimd <run_dir> --name <system>.T<T>.aimd -o runs/rdf-aimd-v1`
 - MLMD later: `src/rdf.py xyz <traj.xyz> --box <L> --name <system>.T<T>.mlmd-<model> -o <dir>`
   (element symbols in the xyz; `i = <step>` in the comment line if steps repeat).
+- Figures (presentation only, no derived numbers): `src/plot_rdf.py results/rdf-aimd-v1
+  -o runs/rdf-aimd-v1/figures`: one 2 x 5 grid per T and r, one line per seed.
 
 ## Files
 - One CSV per run: `<system>.T<T>.<source>.rdf.csv`, source = `aimd` or `mlmd-<model>`.
