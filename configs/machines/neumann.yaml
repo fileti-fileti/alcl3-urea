@@ -14,7 +14,7 @@ storage:
   purge: none                         # owner, 2026-11-13: nothing deletes /home automatically
   notes: "/home is NFS-exported to the nodes; /scratch exists on the headnode only"
 partitions:
-  - batch             # n01-n06, n08-n11 (n01-n08 old, no CP2K; n09 kills CP2K after ~11-13 h, owner-reported)
+  - batch             # n01-n06, n08-n11 (n01-n08 old, no CP2K; n09 and n10 kill CP2K after ~11-13 h, owner-reported 2026-11-18)
   - EPYC_9734         # n12, 448 CPUs
 toy_job_partition: batch
 modules:

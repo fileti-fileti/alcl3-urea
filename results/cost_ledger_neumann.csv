@@ -1,0 +1,105 @@
+machine,job_id,job_name,partition,state,exit_code,start,end,elapsed_s,alloc_cpus,nodelist,workdir,cost,cost_unit,recorded_at
+neumann,4123,g_r10fora,batch,FAILED,1:0,2026-10-13T19:49:36,2026-10-13T19:49:36,0,112,None assigned,/home/eudes/alcl3_urea_data/01_geo/r10_fora,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4125,g_r10fora,EPYC_9734,COMPLETED,0:0,2026-10-13T19:53:44,2026-10-13T21:53:52,7208,112,n12,/home/eudes/alcl3_urea_data/01_geo/r10_fora,224.2489,core-hours,2026-11-18T13:28:17+00:00
+neumann,4126,g_r10ion,batch,CANCELLED by 1004,0:0,None,2026-10-13T19:58:44,0,96,None assigned,/home/eudes/alcl3_urea_data/01_geo/r10_ion,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4127,g_r10mist,EPYC_9734,COMPLETED,0:0,2026-10-13T19:53:44,2026-10-13T21:47:08,6804,112,n12,/home/eudes/alcl3_urea_data/01_geo/r10_mist,211.6800,core-hours,2026-11-18T13:28:17+00:00
+neumann,4128,g_r10neut,batch,COMPLETED,0:0,2026-10-13T19:53:44,2026-10-13T23:17:12,12208,128,n10,/home/eudes/alcl3_urea_data/01_geo/r10_neut,434.0622,core-hours,2026-11-18T13:28:17+00:00
+neumann,4129,g_r10reag,EPYC_9734,COMPLETED,0:0,2026-10-13T19:53:44,2026-10-13T22:04:53,7869,112,n12,/home/eudes/alcl3_urea_data/01_geo/r10_reag,244.8133,core-hours,2026-11-18T13:28:17+00:00
+neumann,4130,g_r13ionA,batch,FAILED,1:0,2026-10-13T19:53:44,2026-10-13T20:16:54,1390,128,n09,/home/eudes/alcl3_urea_data/01_geo/r13_ionA,49.4222,core-hours,2026-11-18T13:28:17+00:00
+neumann,4131,g_r13ionB,batch,FAILED,1:0,2026-10-13T20:16:54,2026-10-13T20:38:10,1276,128,n09,/home/eudes/alcl3_urea_data/01_geo/r13_ionB,45.3689,core-hours,2026-11-18T13:28:17+00:00
+neumann,4132,g_r13mist,EPYC_9734,FAILED,1:0,2026-10-13T19:53:44,2026-10-13T20:06:34,770,112,n12,/home/eudes/alcl3_urea_data/01_geo/r13_mist,23.9556,core-hours,2026-11-18T13:28:17+00:00
+neumann,4133,g_r13neut,batch,CANCELLED by 1004,0:0,None,2026-10-13T19:58:44,0,96,None assigned,/home/eudes/alcl3_urea_data/01_geo/r13_neut,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4134,g_r13reag,batch,COMPLETED,0:0,2026-10-13T20:38:10,2026-10-14T00:05:36,12446,128,n09,/home/eudes/alcl3_urea_data/01_geo/r13_reag,442.5244,core-hours,2026-11-18T13:28:17+00:00
+neumann,4135,g_r15ionA,EPYC_9734,FAILED,1:0,2026-10-13T20:06:34,2026-10-13T20:21:33,899,112,n12,/home/eudes/alcl3_urea_data/01_geo/r15_ionA,27.9689,core-hours,2026-11-18T13:28:17+00:00
+neumann,4136,g_r15ionB,batch,COMPLETED,0:0,2026-10-13T23:17:12,2026-10-14T03:55:09,16677,128,n10,/home/eudes/alcl3_urea_data/01_geo/r15_ionB,592.9600,core-hours,2026-11-18T13:28:17+00:00
+neumann,4137,g_r15mist,EPYC_9734,FAILED,1:0,2026-10-13T20:21:33,2026-10-13T20:36:09,876,112,n12,/home/eudes/alcl3_urea_data/01_geo/r15_mist,27.2533,core-hours,2026-11-18T13:28:17+00:00
+neumann,4138,g_r15neut,EPYC_9734,COMPLETED,0:0,2026-10-13T20:36:09,2026-10-13T22:53:24,8235,112,n12,/home/eudes/alcl3_urea_data/01_geo/r15_neut,256.2000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4139,g_r15reag,EPYC_9734,COMPLETED,0:0,2026-10-13T21:47:08,2026-10-13T23:59:48,7960,112,n12,/home/eudes/alcl3_urea_data/01_geo/r15_reag,247.6444,core-hours,2026-11-18T13:28:17+00:00
+neumann,4140,g_r10ion,batch,COMPLETED,0:0,2026-10-14T03:55:10,2026-10-14T07:14:25,11955,128,n10,/home/eudes/alcl3_urea_data/01_geo/r10_ion,425.0667,core-hours,2026-11-18T13:28:17+00:00
+neumann,4141,g_r13neut,batch,FAILED,1:0,2026-10-14T00:05:37,2026-10-14T00:26:51,1274,128,n09,/home/eudes/alcl3_urea_data/01_geo/r13_neut,45.2978,core-hours,2026-11-18T13:28:17+00:00
+neumann,4142,g_r13ionA,batch,FAILED,2:0,2026-10-14T00:26:52,2026-10-14T00:27:09,17,128,n09,/home/eudes/alcl3_urea_data/01_geo/r13_ionA,0.6044,core-hours,2026-11-18T13:28:17+00:00
+neumann,4143,g_r13ionB,batch,FAILED,2:0,2026-10-14T00:27:09,2026-10-14T00:27:25,16,128,n09,/home/eudes/alcl3_urea_data/01_geo/r13_ionB,0.5689,core-hours,2026-11-18T13:28:17+00:00
+neumann,4144,g_r13mist,EPYC_9734,FAILED,2:0,2026-10-13T21:53:52,2026-10-13T21:54:07,15,112,n12,/home/eudes/alcl3_urea_data/01_geo/r13_mist,0.4667,core-hours,2026-11-18T13:28:17+00:00
+neumann,4145,g_r15ionA,EPYC_9734,FAILED,2:0,2026-10-13T21:54:07,2026-10-13T21:54:20,13,112,n12,/home/eudes/alcl3_urea_data/01_geo/r15_ionA,0.4044,core-hours,2026-11-18T13:28:17+00:00
+neumann,4146,g_r15mist,EPYC_9734,FAILED,2:0,2026-10-13T21:54:20,2026-10-13T21:54:34,14,112,n12,/home/eudes/alcl3_urea_data/01_geo/r15_mist,0.4356,core-hours,2026-11-18T13:28:17+00:00
+neumann,4147,g_r13ionA,batch,COMPLETED,0:0,2026-10-14T05:18:20,2026-10-14T07:45:01,8801,128,n09,/home/eudes/alcl3_urea_data/01_geo/r13_ionA,312.9244,core-hours,2026-11-18T13:28:17+00:00
+neumann,4149,m400_r13ionA,batch,FAILED,9:0,2026-10-14T07:45:02,2026-10-14T15:43:47,28725,128,n09,/home/eudes/alcl3_urea_data/02_aimd/T400/r13_ionA,1021.3333,core-hours,2026-11-18T13:28:17+00:00
+neumann,4150,g_r13ionB,batch,CANCELLED by 1004,0:0,None,2026-10-14T14:46:38,0,128,None assigned,/home/eudes/alcl3_urea_data/01_geo/r13_ionB,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4153,g_r13mist,EPYC_9734,COMPLETED,0:0,2026-10-14T05:18:20,2026-10-14T06:33:34,4514,112,n12,/home/eudes/alcl3_urea_data/01_geo/r13_mist,140.4356,core-hours,2026-11-18T13:28:17+00:00
+neumann,4155,m400_r13mist,EPYC_9734,COMPLETED,0:0,2026-10-14T06:33:34,2026-10-16T05:16:38,168184,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T400/r13_mist,5232.3911,core-hours,2026-11-18T13:28:17+00:00
+neumann,4156,g_r15ionA,EPYC_9734,COMPLETED,0:0,2026-10-14T05:18:20,2026-10-14T07:00:29,6129,112,n12,/home/eudes/alcl3_urea_data/01_geo/r15_ionA,190.6800,core-hours,2026-11-18T13:28:17+00:00
+neumann,4158,m400_r15ionA,EPYC_9734,COMPLETED,0:0,2026-10-14T07:00:29,2026-10-16T15:58:58,205109,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T400/r15_ionA,6381.1689,core-hours,2026-11-18T13:28:17+00:00
+neumann,4159,g_r15mist,EPYC_9734,COMPLETED,0:0,2026-10-14T05:18:20,2026-10-14T06:52:51,5671,112,n12,/home/eudes/alcl3_urea_data/01_geo/r15_mist,176.4311,core-hours,2026-11-18T13:28:17+00:00
+neumann,4161,m400_r15mist,EPYC_9734,COMPLETED,0:0,2026-10-14T06:52:51,2026-10-16T15:19:31,203200,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T400/r15_mist,6321.7778,core-hours,2026-11-18T13:28:17+00:00
+neumann,4162,g_r13neut,batch,CANCELLED by 1004,0:0,None,2026-10-14T14:46:38,0,128,None assigned,/home/eudes/alcl3_urea_data/01_geo/r13_neut,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4166,m400_r10ion,batch,FAILED,9:0,2026-10-14T07:14:26,2026-10-14T18:55:15,42049,128,n10,/home/eudes/alcl3_urea_data/02_aimd/T400/r10_ion,1495.0756,core-hours,2026-11-18T13:28:17+00:00
+neumann,4167,m400_r10fora,EPYC_9734,COMPLETED,0:0,2026-10-14T05:18:23,2026-10-16T11:25:00,194797,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T400/r10_fora,6060.3511,core-hours,2026-11-18T13:28:17+00:00
+neumann,4168,m450_r10fora,EPYC_9734,CANCELLED by 1004,0:0,None,2026-10-14T05:19:31,0,112,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T450/r10_fora,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4169,m333_r10mist,EPYC_9734,CANCELLED by 1004,0:0,None,2026-10-14T05:19:31,0,112,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T333/r10_mist,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4170,m400_r10mist,EPYC_9734,COMPLETED,0:0,2026-10-16T05:16:38,2026-10-16T15:21:36,36298,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T400/r10_mist,1129.2711,core-hours,2026-11-18T13:28:17+00:00
+neumann,4171,m400_r10neut,batch,CANCELLED by 1004,0:0,None,2026-10-14T14:46:38,0,128,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T400/r10_neut,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4172,m450_r10neut,batch,CANCELLED by 1004,0:0,None,2026-10-14T05:19:31,0,128,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T450/r10_neut,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4173,m400_r10reag,EPYC_9734,COMPLETED,0:0,2026-10-16T11:25:00,2026-10-16T22:04:56,38396,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T400/r10_reag,1194.5422,core-hours,2026-11-18T13:28:17+00:00
+neumann,4174,m450_r10reag,EPYC_9734,CANCELLED by 1004,0:0,None,2026-10-14T05:19:31,0,112,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T450/r10_reag,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4175,m400_r13reag,batch,CANCELLED by 1004,0:0,None,2026-10-14T14:46:38,0,128,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T400/r13_reag,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4176,m450_r13reag,batch,CANCELLED by 1004,0:0,None,2026-10-14T05:19:31,0,128,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T450/r13_reag,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4177,m333_r15ionB,batch,CANCELLED by 1004,0:0,None,2026-10-14T05:19:31,0,128,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T333/r15_ionB,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4178,m400_r15ionB,batch,CANCELLED by 1004,0:0,None,2026-10-14T14:46:38,0,128,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T400/r15_ionB,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4179,m400_r15neut,EPYC_9734,COMPLETED,0:0,2026-10-16T15:19:31,2026-10-17T02:38:52,40761,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T400/r15_neut,1268.1200,core-hours,2026-11-18T13:28:17+00:00
+neumann,4180,m450_r15neut,EPYC_9734,CANCELLED by 1004,0:0,None,2026-10-14T05:19:31,0,112,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T450/r15_neut,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4181,m400_r15reag,EPYC_9734,COMPLETED,0:0,2026-10-16T15:21:36,2026-10-17T02:13:53,39137,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T400/r15_reag,1217.5956,core-hours,2026-11-18T13:28:17+00:00
+neumann,4182,m450_r15reag,EPYC_9734,CANCELLED by 1004,0:0,None,2026-10-14T05:19:31,0,112,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T450/r15_reag,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4183,m333_r10ion,batch,CANCELLED by 1004,0:0,None,2026-10-14T14:46:38,0,128,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T333/r10_ion,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4184,m333_r10mist,EPYC_9734,CANCELLED by 1004,0:0,None,2026-10-14T14:46:38,0,112,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T333/r10_mist,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4185,m333_r13ionA,batch,CANCELLED by 1004,0:0,None,2026-10-14T14:46:38,0,128,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T333/r13_ionA,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4187,m333_r13mist,EPYC_9734,CANCELLED by 1004,0:0,None,2026-10-14T14:46:38,0,112,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T333/r13_mist,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4188,m333_r15ionA,EPYC_9734,CANCELLED by 1004,0:0,None,2026-10-14T14:46:38,0,112,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T333/r15_ionA,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4189,m333_r15ionB,batch,CANCELLED by 1004,0:0,None,2026-10-14T14:46:38,0,128,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T333/r15_ionB,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4190,m333_r15mist,EPYC_9734,CANCELLED by 1004,0:0,None,2026-10-14T14:46:38,0,112,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T333/r15_mist,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4191,m450_r10fora,EPYC_9734,CANCELLED by 1004,0:0,None,2026-10-14T14:46:38,0,112,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T450/r10_fora,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4192,m450_r10neut,batch,CANCELLED by 1004,0:0,None,2026-10-14T14:46:38,0,128,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T450/r10_neut,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4193,m450_r10reag,EPYC_9734,CANCELLED by 1004,0:0,None,2026-10-14T14:46:38,0,112,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T450/r10_reag,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4195,m450_r13reag,batch,CANCELLED by 1004,0:0,None,2026-10-14T14:46:38,0,128,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T450/r13_reag,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4196,m450_r15neut,EPYC_9734,CANCELLED by 1004,0:0,None,2026-10-14T14:46:38,0,112,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T450/r15_neut,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4197,m450_r15reag,EPYC_9734,CANCELLED by 1004,0:0,None,2026-10-14T14:46:38,0,112,None assigned,/home/eudes/alcl3_urea_data/02_aimd/T450/r15_reag,0.0000,core-hours,2026-11-18T13:28:17+00:00
+neumann,4198,m400_r13ionA,batch,CANCELLED by 1004,0:0,2026-10-15T05:07:19,2026-10-15T05:14:33,434,128,n09,/home/eudes/alcl3_urea_data/02_aimd/T400/r13_ionA,15.4311,core-hours,2026-11-18T13:28:17+00:00
+neumann,4199,m400_r10ion,batch,CANCELLED by 1004,0:0,2026-10-15T05:07:19,2026-10-15T05:14:33,434,128,n10,/home/eudes/alcl3_urea_data/02_aimd/T400/r10_ion,15.4311,core-hours,2026-11-18T13:28:17+00:00
+neumann,4200,m400_r13ionA,batch,COMPLETED,0:0,2026-10-15T05:14:39,2026-10-18T14:02:43,290884,128,n09,/home/eudes/alcl3_urea_data/02_aimd/T400/r13_ionA,10342.5422,core-hours,2026-11-18T13:28:17+00:00
+neumann,4201,m400_r10ion,batch,COMPLETED,0:0,2026-10-15T05:14:39,2026-10-18T16:36:26,300107,128,n10,/home/eudes/alcl3_urea_data/02_aimd/T400/r10_ion,10670.4711,core-hours,2026-11-18T13:28:17+00:00
+neumann,4202,m400_r10mist,EPYC_9734,COMPLETED,0:0,2026-10-17T04:05:18,2026-10-19T00:01:52,158194,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T400/r10_mist,4921.5911,core-hours,2026-11-18T13:28:17+00:00
+neumann,4203,m400_r10reag,EPYC_9734,COMPLETED,0:0,2026-10-17T04:05:18,2026-10-19T03:49:11,171833,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T400/r10_reag,5345.9156,core-hours,2026-11-18T13:28:17+00:00
+neumann,4204,m400_r15neut,EPYC_9734,COMPLETED,0:0,2026-10-17T04:05:18,2026-10-19T08:34:52,188974,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T400/r15_neut,5879.1911,core-hours,2026-11-18T13:28:17+00:00
+neumann,4205,m400_r15reag,EPYC_9734,COMPLETED,0:0,2026-10-17T04:05:18,2026-10-19T08:56:33,190275,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T400/r15_reag,5919.6667,core-hours,2026-11-18T13:28:17+00:00
+neumann,4206,m333_r13ionA,batch,COMPLETED,0:0,2026-10-18T14:02:44,2026-10-21T16:21:10,267506,128,n09,/home/eudes/alcl3_urea_data/02_aimd/T333/r13_ionA,9511.3244,core-hours,2026-11-18T13:28:17+00:00
+neumann,4207,m333_r13mist,batch,COMPLETED,0:0,2026-10-18T16:36:27,2026-10-21T12:04:37,242890,128,n10,/home/eudes/alcl3_urea_data/02_aimd/T333/r13_mist,8636.0889,core-hours,2026-11-18T13:28:17+00:00
+neumann,4208,m400_r13reag,EPYC_9734,COMPLETED,0:0,2026-10-19T00:01:52,2026-10-21T03:11:50,184198,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T400/r13_reag,5730.6044,core-hours,2026-11-18T13:28:17+00:00
+neumann,4209,m450_r13reag,EPYC_9734,COMPLETED,0:0,2026-10-19T03:49:11,2026-10-21T06:36:55,182864,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T450/r13_reag,5689.1022,core-hours,2026-11-18T13:28:17+00:00
+neumann,4210,m333_r10ion,EPYC_9734,COMPLETED,0:0,2026-10-21T06:36:55,2026-10-23T09:08:07,181872,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T333/r10_ion,5658.2400,core-hours,2026-11-18T13:28:17+00:00
+neumann,4211,m333_r10mist,EPYC_9734,CANCELLED by 1004,0:0,2026-10-21T15:48:30,2026-10-23T09:58:18,151788,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T333/r10_mist,4722.2933,core-hours,2026-11-18T13:28:17+00:00
+neumann,4213,m400_r10neut,EPYC_9734,COMPLETED,0:0,2026-10-19T08:34:52,2026-10-21T04:52:03,159431,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T400/r10_neut,4960.0756,core-hours,2026-11-18T13:28:17+00:00
+neumann,4214,m400_r15ionB,EPYC_9734,COMPLETED,0:0,2026-10-19T08:56:33,2026-10-21T15:48:30,197517,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T400/r15_ionB,6144.9733,core-hours,2026-11-18T13:28:17+00:00
+neumann,4215,m400_r13ionB,EPYC_9734,COMPLETED,0:0,2026-10-21T03:11:50,2026-10-23T04:30:06,177496,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T400/r13_ionB,5522.0978,core-hours,2026-11-18T13:28:17+00:00
+neumann,4216,m400_r13neut,EPYC_9734,COMPLETED,0:0,2026-10-21T04:52:03,2026-10-23T05:28:32,174989,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T400/r13_neut,5444.1022,core-hours,2026-11-18T13:28:17+00:00
+neumann,4219,m333_r10mist,batch,CANCELLED by 1004,0:0,2026-10-23T09:58:18,2026-10-23T23:27:50,48572,112,n09,/home/eudes/alcl3_urea_data/02_aimd/T333/r10_mist,1511.1289,core-hours,2026-11-18T13:28:17+00:00
+neumann,4227,m333_r10mist,EPYC_9734,COMPLETED,0:0,2026-10-23T23:27:50,2026-10-24T06:20:26,24756,112,n12,/home/eudes/alcl3_urea_data/02_aimd/T333/r10_mist,770.1867,core-hours,2026-11-18T13:28:17+00:00
+neumann,4241,cp2k.psmp,EPYC_9734,FAILED,0:9,2026-10-26T09:05:50,2026-10-26T09:09:42,232,112,n12,/home/eudes/alcl3_urea_data/conv_test/conv/A/cut0400/T400_r10_neut@5000,7.2178,core-hours,2026-11-18T13:28:17+00:00
+neumann,4242,cp2k.psmp,EPYC_9734,FAILED,0:9,2026-10-26T09:20:11,2026-10-26T09:32:17,726,112,n12,/home/eudes/alcl3_urea_data/conv_test/scf_dflt,22.5867,core-hours,2026-11-18T13:28:17+00:00
+neumann,4243,cp2k.psmp,EPYC_9734,FAILED,0:9,2026-10-26T09:20:11,2026-10-26T09:29:16,545,112,n12,/home/eudes/alcl3_urea_data/conv_test/scf_cg,16.9556,core-hours,2026-11-18T13:28:17+00:00
+neumann,4244,cp2k.psmp,EPYC_9734,FAILED,0:9,2026-10-26T09:20:11,2026-10-26T09:32:17,726,112,n12,/home/eudes/alcl3_urea_data/conv_test/scf_gap,22.5867,core-hours,2026-11-18T13:28:17+00:00
+neumann,4245,cp2k.psmp,EPYC_9734,COMPLETED,0:0,2026-10-26T09:43:14,2026-10-26T09:55:49,755,112,n12,/home/eudes/alcl3_urea_data/conv_test/scf2_dflt600,23.4889,core-hours,2026-11-18T13:28:17+00:00
+neumann,4246,cp2k.psmp,EPYC_9734,COMPLETED,0:0,2026-10-26T09:43:14,2026-10-26T09:53:29,615,112,n12,/home/eudes/alcl3_urea_data/conv_test/scf2_fullall,19.1333,core-hours,2026-11-18T13:28:17+00:00
+neumann,4247,cp2k.psmp,EPYC_9734,COMPLETED,0:0,2026-10-26T09:43:14,2026-10-26T09:53:37,623,112,n12,/home/eudes/alcl3_urea_data/conv_test/scf2_cg600,19.3822,core-hours,2026-11-18T13:28:17+00:00
+neumann,4248,cp2k.psmp,EPYC_9734,COMPLETED,0:0,2026-10-26T09:43:14,2026-10-26T09:45:42,148,112,n12,/home/eudes/alcl3_urea_data/conv_test/scf2_diag,4.6044,core-hours,2026-11-18T13:28:17+00:00
+neumann,4249,cp2k.psmp,EPYC_9734,COMPLETED,0:0,2026-10-26T10:06:26,2026-10-26T10:08:29,123,112,n12,/home/eudes/alcl3_urea_data/conv_test/scf3_stress,3.8267,core-hours,2026-11-18T13:28:17+00:00
+neumann,4250,convA,EPYC_9734,COMPLETED,0:0,2026-10-26T10:10:57,2026-10-26T12:07:25,6988,112,n12,/home/eudes/alcl3_urea_data/conv_test,217.4044,core-hours,2026-11-18T13:28:17+00:00
+neumann,4251,convA,EPYC_9734,COMPLETED,0:0,2026-10-26T10:10:57,2026-10-26T12:07:35,6998,112,n12,/home/eudes/alcl3_urea_data/conv_test,217.7156,core-hours,2026-11-18T13:28:17+00:00
+neumann,4252,convA,EPYC_9734,COMPLETED,0:0,2026-10-26T10:10:57,2026-10-26T12:07:36,6999,112,n12,/home/eudes/alcl3_urea_data/conv_test,217.7467,core-hours,2026-11-18T13:28:17+00:00
+neumann,4253,convA,EPYC_9734,COMPLETED,0:0,2026-10-26T10:10:57,2026-10-26T12:07:14,6977,112,n12,/home/eudes/alcl3_urea_data/conv_test,217.0622,core-hours,2026-11-18T13:28:17+00:00
+neumann,4254,convB,EPYC_9734,COMPLETED,0:0,2026-10-26T12:07:14,2026-10-26T13:41:25,5651,112,n12,/home/eudes/alcl3_urea_data/conv_test,175.8089,core-hours,2026-11-18T13:28:17+00:00
+neumann,4255,convB,EPYC_9734,COMPLETED,0:0,2026-10-26T12:07:25,2026-10-26T13:40:02,5557,112,n12,/home/eudes/alcl3_urea_data/conv_test,172.8844,core-hours,2026-11-18T13:28:17+00:00
+neumann,4256,convB,EPYC_9734,COMPLETED,0:0,2026-10-26T12:07:35,2026-10-26T13:41:49,5654,112,n12,/home/eudes/alcl3_urea_data/conv_test,175.9022,core-hours,2026-11-18T13:28:17+00:00
+neumann,4257,convB,EPYC_9734,COMPLETED,0:0,2026-10-26T12:07:36,2026-10-26T13:42:17,5681,112,n12,/home/eudes/alcl3_urea_data/conv_test,176.7422,core-hours,2026-11-18T13:28:17+00:00
+neumann,4258,convD,EPYC_9734,COMPLETED,0:0,2026-10-26T13:51:31,2026-10-26T15:19:15,5264,112,n12,/home/eudes/alcl3_urea_data/conv_test,163.7689,core-hours,2026-11-18T13:28:17+00:00
+neumann,4259,convD,EPYC_9734,COMPLETED,0:0,2026-10-26T13:51:31,2026-10-26T15:19:12,5261,112,n12,/home/eudes/alcl3_urea_data/conv_test,163.6756,core-hours,2026-11-18T13:28:17+00:00
+neumann,4260,convD,EPYC_9734,COMPLETED,0:0,2026-10-26T13:51:34,2026-10-26T15:18:06,5192,112,n12,/home/eudes/alcl3_urea_data/conv_test,161.5289,core-hours,2026-11-18T13:28:17+00:00
+neumann,4261,convD,EPYC_9734,COMPLETED,0:0,2026-10-26T13:51:34,2026-10-26T15:20:27,5333,112,n12,/home/eudes/alcl3_urea_data/conv_test,165.9156,core-hours,2026-11-18T13:28:17+00:00

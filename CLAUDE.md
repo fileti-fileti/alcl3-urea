@@ -1,16 +1,30 @@
-# CLAUDE.md — lab-template
+# CLAUDE.md — alcl3-urea
 
 Instructions for the agent working in this repo. Personal preferences (tone, name, execution
 habits) live in `~/.claude/CLAUDE.md` on each machine, not here. This file holds project
 rules and conventions only. Keep it under ~160 lines; history goes to `docs/journal.md`.
 
 ## Project
-- `lab-template` is the template for MLFF research repos (MACE/DeePMD, CP2K, LAMMPS, GROMACS)
-  across two machines: **neumann** (UNIFESP, own cluster) and **sdumont** (LNCC).
-- Projects are created from it by `docs/new-project.md`; each project replaces this
-  section with its research question and data locations.
-- Experiment parts (`docs/<experiment>.md`, `docs/claims.md`) exist here as skeletons only
-  (ADR-0001).
+- **alcl3-urea** (GitHub `fileti-fileti/alcl3-urea`, private): how does the speciation of
+  AlCl3:urea electrolytes depend on the molar ratio r (1.0, 1.3, 1.5) and on temperature?
+  AIMD samples configurations -> frames relabelled at a reference level -> MACE (committee,
+  active learning) -> ns MLMD (LAMMPS); species by the bond graph of SI S2.2.
+- Set-up: SI draft v0.3 (2026-10-14), dataset report for Davi (2026-10-24): 15 seeds (3 r x
+  5 speciation hypotheses), CP2K PBE-D3(BJ)/DZVP, NVT 0.5 fs, 1 + 5 ps, 30 runs at 333-450 K.
+- Claim reach: AIMD frames are training data only (SI S6.1); speciation claims need MLMD
+  populations that agree from opposite seeds.
+- Labels: one reference level, CP2K version and input for every frame, never mixed with
+  sampling energies; splits by trajectory, never by frame.
+- **Confidential** (unpublished): nothing goes to an external service; structures,
+  trajectories and datasets never enter git.
+- People: Davi computes the labels (TODO(owner): machine, repo access).
+- Data, neumann: `~/alcl3_urea_data`, legacy, **read-only** (ADR-0008): `00_inputs`,
+  `01_geo`, `02_aimd/T{333,400,450}/<sys>` (20 of 30 runs complete here), `conv_test/`
+  (cutoff/REL/EPS tests, `sp_template.inp`, `cp2k_data/`), `scripts/`, `cp2k_conv.py`; its
+  jobs enter the ledger by `--workdir`. Frame pool onward lives in this repo (`src/`,
+  `runs/`, `data/`). SI and report: `data/docs/` (TODO(owner): copy them from the Mac).
+- Data, SDumont: the 10 runs made there (CP2K 2024.3) and the training/MLMD dirs
+  (`datasets/vN`, `train`, `md`, `al`): TODO(owner): paths. Repo not set up there yet.
 
 ## Hard rules
 - **Never fabricate** numbers, paths, versions, hyperparameters, job IDs, hashes or
@@ -28,7 +42,7 @@ rules and conventions only. Keep it under ~160 lines; history goes to `docs/jour
 - **Ask first before:** submitting or cancelling **any** job (until per-machine limits are
   set, ADR-0005); deleting or overwriting files the agent did not create; force-push;
   `sudo` or any system-wide change; anything outside the repo. Existing work directories
-  (Prussian blue, ZnCl2, AlCl3, ...) are **read-only**.
+  (`~/alcl3_urea_data`, Prussian blue, ZnCl2, ...) are **read-only**.
 - **Secrets:** never ask for or write passwords, passphrases, tokens, VPN credentials or keys.
   Give the owner the command; the owner types it.
 - **Explain commands:** git, SSH, VS Code and Claude Code commands get one line (what and
@@ -125,17 +139,22 @@ A finished task leaves the block and goes to the journal entry (Done or Problems
 ## Status
 <!-- BEGIN STATUS -->
 - Updated: 2026-11-18 — neumann
-- State: template skeleton on neumann (layout, hook, scripts with tests, machine YAMLs,
-  repo settings, skills, docs, ADRs 0001-0012 and 0017, all accepted). Not set up on SDumont.
+- State: started from lab-template `24e4016` (ADRs 0001-0012, 0017). Legacy dir: GEO_OPT and
+  30 AIMD runs ended (20 complete on neumann, 10 on SDumont); convergence stages A, B, D
+  ended 2026-10-26 (jobs 4250-4261), `sp_template.inp` written; no frame selected or
+  labelled. Not set up on SDumont.
 - Now:
-  - Check the session loop: `/end-session` → new session → `/start-session` (guide step 5).
+  - Reference level: keep PBE-D3(BJ)/DZVP or run S7 / basis stage E first (before labelling).
+  - Bring the 10 SDumont runs to the neumann store and check them before frame selection.
+  - Experiment doc for frame selection and labelling (quotas, splits, QC) before any pick.
 - Later:
-  - SDumont: setup F3/F4, first project from the bootstrap kit (ADR-0012), ledger merge check.
-  - lab-template on GitHub, so every machine has a `template` remote (ADR-0012).
-  - Toy job on neumann to exercise `cost_ledger.py add` on a real job (needs the owner's ok).
-  - Bring template changes into `~/sandbox` through its `template` remote (ADR-0002 path).
-  - Env records for the Mac and SDumont (ADR-0007).
-- Waiting on owner: SDumont facts for ADR-0004/0005 (TODO(owner)).
-- Last sync — neumann: 2026-11-18, pushed to origin on top of `24a7f02`
+  - Copy the pipeline scripts from the legacy dir into `src/`.
+  - SI v0.4: Table S7 census; CP2K 2024.1 vs 2024.3 energy check; MAX_SCF 50x20 check;
+    r = 1.3 density (Liu 2017); production QC of the 30 runs (SI S6.3).
+  - SDumont: deploy key, clone, LNCC paths, ledger of the SDumont jobs.
+  - SI references into `docs/references.bib` after a Crossref check.
+- Waiting on owner: Davi (machine, repo access); where the 10 SDumont runs and the 30-run
+  package for Davi live now; LNCC paths; SI and report copies (and editable sources).
+- Last sync — neumann: 2026-11-18, pushed to origin on top of `24e4016`
 - Last sync — sdumont: never (not cloned)
 <!-- END STATUS -->
