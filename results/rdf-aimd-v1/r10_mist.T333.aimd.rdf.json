@@ -1,0 +1,85 @@
+{
+ "atoms": {
+  "Al": 36,
+  "C": 36,
+  "Cl": 108,
+  "H": 144,
+  "N": 72,
+  "O": 36
+ },
+ "box_A": 19.581168,
+ "created": "2026-11-18T10:52:35",
+ "definition": "g: all pairs (intra + inter), minimum image, cubic box; se: standard error of the block means (blocks of consecutive frames); cn: running count of b atoms per a atom up to r_upper",
+ "dr_A": 0.02,
+ "frames_read": 1024,
+ "frames_used": 1001,
+ "mode": "aimd",
+ "name": "r10_mist.T333.aimd",
+ "nblocks": 5,
+ "numpy": "2.4.6",
+ "pairs": [
+  "Al-Cl",
+  "Al-O",
+  "Al-N",
+  "Al-Al",
+  "Cl-Cl",
+  "Cl-H",
+  "O-H",
+  "C-O",
+  "C-N",
+  "N-H"
+ ],
+ "python": "3.11.15",
+ "rdf_version": 1,
+ "repo_commit": "3115ddd0968dbcadb3952aebdb247b2616c125d7",
+ "rmax_A": 9.7,
+ "script_sha256": "7c710bba297009d50a4714a032a20b4d9c28e5eb4cc621b311cc11d6722767a1",
+ "sources": [
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T333/r10_mist/r10_mist-pos-1.part20261022081341.xyz",
+   "sha256": "0e58168aa484d1c6ff70c02e1348a8e566836636d2351239bbdda373d2a4ed1f"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T333/r10_mist/r10_mist-pos-1.part20261022141351.xyz",
+   "sha256": "ca5a21699573707dad24f3bd01d7a00d778d184efdb3918d06d400df4c41ed91"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T333/r10_mist/r10_mist-pos-1.part20261022201404.xyz",
+   "sha256": "7b3c9c2f0de16337ac5201fdaac99d1cd6bc672f903a101b7a1005efac61be43"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T333/r10_mist/r10_mist-pos-1.part20261023021420.xyz",
+   "sha256": "907a7db4b5473e0fa30a13a7de11f7c0fb25f488dda7d8f4e0e9bee62f108506"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T333/r10_mist/r10_mist-pos-1.part20261023081445.xyz",
+   "sha256": "5694ca5b72b7d70f3f7f40599d740a11a124b5a2308bef3a9443cf15d895a700"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T333/r10_mist/r10_mist-pos-1.part20261023095820.xyz",
+   "sha256": "34231dc2d555168faeb2feb3b2e145f68a470172c6dd7c53958f182b5d76f52d"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T333/r10_mist/r10_mist-pos-1.part20261023160130.xyz",
+   "sha256": "54530aa4a65fb729dea9eea9d8173147c0979b18df76486a0a4a0bebd41eb914"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T333/r10_mist/r10_mist-pos-1.part20261023220447.xyz",
+   "sha256": "ef214f2ad95ac80b8d760e018ca05b9f36913fff22355b188f5c5a9d9d90ddcf"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T333/r10_mist/r10_mist-pos-1.part20261023232752.xyz",
+   "sha256": "6543d3d273550d165e3ad18d7a5b3ccb7823f17fbdfa915672975937cafa33f8"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T333/r10_mist/r10_mist-pos-1.part20261024052803.xyz",
+   "sha256": "eac40e3135c07cc1f8a2f89357e99b3f914df3c0af13c632695e55c7cf87e15d"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T333/r10_mist/r10_mist-pos-1.xyz",
+   "sha256": "e729ee9c99297fa51ac72038bb3965ac783fbf937eea0b6145b36fa9b999cfca"
+  }
+ ],
+ "step_first": 0,
+ "step_last": 10000
+}

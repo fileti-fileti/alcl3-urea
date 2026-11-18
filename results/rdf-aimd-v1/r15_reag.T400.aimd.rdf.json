@@ -1,0 +1,77 @@
+{
+ "atoms": {
+  "Al": 48,
+  "C": 32,
+  "Cl": 144,
+  "H": 128,
+  "N": 64,
+  "O": 32
+ },
+ "box_A": 20.550878,
+ "created": "2026-11-18T10:55:24",
+ "definition": "g: all pairs (intra + inter), minimum image, cubic box; se: standard error of the block means (blocks of consecutive frames); cn: running count of b atoms per a atom up to r_upper",
+ "dr_A": 0.02,
+ "frames_read": 1017,
+ "frames_used": 1001,
+ "mode": "aimd",
+ "name": "r15_reag.T400.aimd",
+ "nblocks": 5,
+ "numpy": "2.4.6",
+ "pairs": [
+  "Al-Cl",
+  "Al-O",
+  "Al-N",
+  "Al-Al",
+  "Cl-Cl",
+  "Cl-H",
+  "O-H",
+  "C-O",
+  "C-N",
+  "N-H"
+ ],
+ "python": "3.11.15",
+ "rdf_version": 1,
+ "repo_commit": "3115ddd0968dbcadb3952aebdb247b2616c125d7",
+ "rmax_A": 9.7,
+ "script_sha256": "7c710bba297009d50a4714a032a20b4d9c28e5eb4cc621b311cc11d6722767a1",
+ "sources": [
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T400/r15_reag/r15_reag-pos-1.part20261017122612.xyz",
+   "sha256": "3399fd970c92eb3c581901bed0770efc3b0419c51621df8dfeb1b723ee52dd94"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T400/r15_reag/r15_reag-pos-1.part20261017182625.xyz",
+   "sha256": "f409eb75811cb2f7d91c3df83894409db666c233e894c834cac0ab8dd175e54f"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T400/r15_reag/r15_reag-pos-1.part20261018002635.xyz",
+   "sha256": "35a9c74860d4600a1b300e03312752f7e29b269c99eb74541186f24fa472132b"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T400/r15_reag/r15_reag-pos-1.part20261018062646.xyz",
+   "sha256": "b70d9bd20393d23629989782940320a12be5c5cf91705dcddd89732bd60a13a5"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T400/r15_reag/r15_reag-pos-1.part20261018122710.xyz",
+   "sha256": "91c6e37d713da0151fe78802177f046ec235a443a68c6076cf1ea00154c149f5"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T400/r15_reag/r15_reag-pos-1.part20261018182817.xyz",
+   "sha256": "aa9965a362a76b62188fbcfb1eda0d3af4f1aa601a4d7d5520c48e92a9c5c857"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T400/r15_reag/r15_reag-pos-1.part20261019002843.xyz",
+   "sha256": "f2953a262e8806b426ca4d46859edb2f6700aebe59d7654fc45c0d993f09fec1"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T400/r15_reag/r15_reag-pos-1.part20261019062953.xyz",
+   "sha256": "065d49f50cbca68e79d10a5fe4130a4333352318b929d8cca6746a63c31a92f9"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T400/r15_reag/r15_reag-pos-1.xyz",
+   "sha256": "15e888b73d5d5d00305d7b4713baa2a8a800434caa40d1927a4445840ea06d76"
+  }
+ ],
+ "step_first": 0,
+ "step_last": 10000
+}

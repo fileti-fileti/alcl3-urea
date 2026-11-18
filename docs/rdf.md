@@ -75,4 +75,9 @@ reach below.
   source trajectory file, repo commit, script sha256.
 
 ## Results
-- Registered in `results/rdf-aimd-v1/`.
+- Registered in `results/rdf-aimd-v1/` (2026-11-18, `src/rdf.py` at `3115ddd`): 20 runs,
+  1001 frames each. Missing: the 10 SDumont runs (T333 r13_ionB, r15_ionA, r15_ionB,
+  r15_mist; T450 r10_fora, r10_neut, r10_reag, r13_neut, r15_neut, r15_reag).
+- QC: finite values, 10 pairs per file, non-decreasing n(r); tails (r > 8 Å) of the pairs
+  with few atoms (Al–Al, C–O, C–N, O–H) are noisier than those of Al–Cl and Cl–H.
+- RDF-1 and RDF-2 not yet evaluated.

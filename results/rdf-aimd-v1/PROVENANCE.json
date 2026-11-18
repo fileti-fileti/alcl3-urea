@@ -1,0 +1,294 @@
+{
+  "name": "rdf-aimd-v1",
+  "registered_at": "2026-11-18T13:56:06+00:00",
+  "machine": "neumann",
+  "hostname": "headnode.cluster.neumann.unifesp.br",
+  "repo_commit": "3115ddd0968dbcadb3952aebdb247b2616c125d7",
+  "source_dir": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1",
+  "patterns": [
+    "*.rdf.csv",
+    "*.rdf.json"
+  ],
+  "files": [
+    {
+      "path": "r10_fora.T400.aimd.rdf.csv",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r10_fora.T400.aimd.rdf.csv",
+      "sha256": "bd5830f133be1963038d7f95400f1652e24c3f9fe8827c0a8ee7e0b00370a836",
+      "bytes": 141728,
+      "source_mtime": "2026-11-18T13:53:03+00:00"
+    },
+    {
+      "path": "r10_fora.T400.aimd.rdf.json",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r10_fora.T400.aimd.rdf.json",
+      "sha256": "26a6bbd7285e79e0b0a9e95df1926ded6515ff12fd3797734cf313d397e47e59",
+      "bytes": 1028,
+      "source_mtime": "2026-11-18T13:53:03+00:00"
+    },
+    {
+      "path": "r10_ion.T333.aimd.rdf.csv",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r10_ion.T333.aimd.rdf.csv",
+      "sha256": "718e8252b8ddbb6c0a9f48f343ceb9965c30c164cd6e4b1a745a6499645d53ec",
+      "bytes": 141701,
+      "source_mtime": "2026-11-18T13:52:25+00:00"
+    },
+    {
+      "path": "r10_ion.T333.aimd.rdf.json",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r10_ion.T333.aimd.rdf.json",
+      "sha256": "046006aa3250d876851f26049c1ce6c88f6f4534bcccc702a1012b593761d7e2",
+      "bytes": 2159,
+      "source_mtime": "2026-11-18T13:52:25+00:00"
+    },
+    {
+      "path": "r10_ion.T400.aimd.rdf.csv",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r10_ion.T400.aimd.rdf.csv",
+      "sha256": "79b5eda07de6475810d429afdf8ffce4b6af7c7248af3460f489327e90271d1b",
+      "bytes": 141700,
+      "source_mtime": "2026-11-18T13:53:13+00:00"
+    },
+    {
+      "path": "r10_ion.T400.aimd.rdf.json",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r10_ion.T400.aimd.rdf.json",
+      "sha256": "7b56df0355f32a212f8f749f76a3c261983881548a50af4648f0bf14554bbd48",
+      "bytes": 3104,
+      "source_mtime": "2026-11-18T13:53:13+00:00"
+    },
+    {
+      "path": "r10_mist.T333.aimd.rdf.csv",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r10_mist.T333.aimd.rdf.csv",
+      "sha256": "9274d75cc4cd7bbe45d36049846de7a34a374344c76eeb5e48bb76c91bddc535",
+      "bytes": 141682,
+      "source_mtime": "2026-11-18T13:52:35+00:00"
+    },
+    {
+      "path": "r10_mist.T333.aimd.rdf.json",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r10_mist.T333.aimd.rdf.json",
+      "sha256": "73674c6c0e9d1f3a9d4748a40f5e5445c8caf4b82c37a91d4ea7c9a5490be4b2",
+      "bytes": 2938,
+      "source_mtime": "2026-11-18T13:52:35+00:00"
+    },
+    {
+      "path": "r10_mist.T400.aimd.rdf.csv",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r10_mist.T400.aimd.rdf.csv",
+      "sha256": "682547c3c78054bda4ba70807f807bfe84a3bbccfcaa1380c5d591d57b437c37",
+      "bytes": 141683,
+      "source_mtime": "2026-11-18T13:53:22+00:00"
+    },
+    {
+      "path": "r10_mist.T400.aimd.rdf.json",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r10_mist.T400.aimd.rdf.json",
+      "sha256": "cee87ff2c0bfa485e6ab459ab1301e3319ca59d83ce04ab8a1d669f205f3090c",
+      "bytes": 2174,
+      "source_mtime": "2026-11-18T13:53:22+00:00"
+    },
+    {
+      "path": "r10_neut.T400.aimd.rdf.csv",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r10_neut.T400.aimd.rdf.csv",
+      "sha256": "bc90f0ffe78ad2abc8e44fa0ee1f4e15744e4297480a1f6626ca30d04cfc7a3a",
+      "bytes": 141689,
+      "source_mtime": "2026-11-18T13:53:32+00:00"
+    },
+    {
+      "path": "r10_neut.T400.aimd.rdf.json",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r10_neut.T400.aimd.rdf.json",
+      "sha256": "6ee7ed377ebe7bb71646349cfcf2c55e1b2b462de3aadc5401c16d021f89aad6",
+      "bytes": 2174,
+      "source_mtime": "2026-11-18T13:53:32+00:00"
+    },
+    {
+      "path": "r10_reag.T400.aimd.rdf.csv",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r10_reag.T400.aimd.rdf.csv",
+      "sha256": "e96befe9840dd3db916d89802a1e77feca1ece7bca642739edae8c5a2c1d11f0",
+      "bytes": 141754,
+      "source_mtime": "2026-11-18T13:53:42+00:00"
+    },
+    {
+      "path": "r10_reag.T400.aimd.rdf.json",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r10_reag.T400.aimd.rdf.json",
+      "sha256": "2622dd1f86b17335293dba6259add49f802c85f2c63843270e80deac109e8c2c",
+      "bytes": 2365,
+      "source_mtime": "2026-11-18T13:53:42+00:00"
+    },
+    {
+      "path": "r13_ionA.T333.aimd.rdf.csv",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r13_ionA.T333.aimd.rdf.csv",
+      "sha256": "7ed4f0ad9a34b1f5d24badc106c1578daddf6398da0357f14c4b72fca1319c80",
+      "bytes": 141630,
+      "source_mtime": "2026-11-18T13:52:44+00:00"
+    },
+    {
+      "path": "r13_ionA.T333.aimd.rdf.json",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r13_ionA.T333.aimd.rdf.json",
+      "sha256": "05fe6c90465d85df196b3f1212c19ffa3e0ca86e22af5bb134d606fc266a62b9",
+      "bytes": 2747,
+      "source_mtime": "2026-11-18T13:52:44+00:00"
+    },
+    {
+      "path": "r13_ionA.T400.aimd.rdf.csv",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r13_ionA.T400.aimd.rdf.csv",
+      "sha256": "593ef776fc417b38f6e92b8dd4fcc104132dc388f6657de49e5a9e5fee610cac",
+      "bytes": 141622,
+      "source_mtime": "2026-11-18T13:53:51+00:00"
+    },
+    {
+      "path": "r13_ionA.T400.aimd.rdf.json",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r13_ionA.T400.aimd.rdf.json",
+      "sha256": "1b4c6bf30729048d1276ddc8ff73b2ce1051e0ab22a0f907a6706a42011a7c32",
+      "bytes": 3129,
+      "source_mtime": "2026-11-18T13:53:51+00:00"
+    },
+    {
+      "path": "r13_ionB.T400.aimd.rdf.csv",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r13_ionB.T400.aimd.rdf.csv",
+      "sha256": "8a4b656ac57fb6182b26e224149b3f71ae02ad44e365ab71a0a283d46e913a3e",
+      "bytes": 141622,
+      "source_mtime": "2026-11-18T13:54:00+00:00"
+    },
+    {
+      "path": "r13_ionB.T400.aimd.rdf.json",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r13_ionB.T400.aimd.rdf.json",
+      "sha256": "5c1576743b4c7279d8d77b2c00491b56cc7a04e5f650f8125753c21940c4fada",
+      "bytes": 2174,
+      "source_mtime": "2026-11-18T13:54:00+00:00"
+    },
+    {
+      "path": "r13_mist.T333.aimd.rdf.csv",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r13_mist.T333.aimd.rdf.csv",
+      "sha256": "0cc7e0dc9b45b13341110d4c4a7cdc097fc6db2f0686f95a48edc7f5e2f0748a",
+      "bytes": 141602,
+      "source_mtime": "2026-11-18T13:52:53+00:00"
+    },
+    {
+      "path": "r13_mist.T333.aimd.rdf.json",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r13_mist.T333.aimd.rdf.json",
+      "sha256": "df74dd24a0dbccc7a7e854c6495f0436fbba32b80ab3e280459999e1a2f060a0",
+      "bytes": 2556,
+      "source_mtime": "2026-11-18T13:52:53+00:00"
+    },
+    {
+      "path": "r13_mist.T400.aimd.rdf.csv",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r13_mist.T400.aimd.rdf.csv",
+      "sha256": "c4fe521e424cd31143452b393daa52541c5a86e48587585c483aff63f02e8732",
+      "bytes": 141603,
+      "source_mtime": "2026-11-18T13:54:09+00:00"
+    },
+    {
+      "path": "r13_mist.T400.aimd.rdf.json",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r13_mist.T400.aimd.rdf.json",
+      "sha256": "5c36405209aa386ffd42da0c6498e5e685f87605bbaad5d4fb5740c01e9b11aa",
+      "bytes": 1028,
+      "source_mtime": "2026-11-18T13:54:09+00:00"
+    },
+    {
+      "path": "r13_neut.T400.aimd.rdf.csv",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r13_neut.T400.aimd.rdf.csv",
+      "sha256": "0704fe6c19049f2f4ae4c921b9fd8d1e860ea224453412d67cc12114f2857263",
+      "bytes": 141601,
+      "source_mtime": "2026-11-18T13:54:18+00:00"
+    },
+    {
+      "path": "r13_neut.T400.aimd.rdf.json",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r13_neut.T400.aimd.rdf.json",
+      "sha256": "c3a389817e07032a1f5aeb3ae487c359c000f447787c809261cef28868591d1f",
+      "bytes": 2174,
+      "source_mtime": "2026-11-18T13:54:18+00:00"
+    },
+    {
+      "path": "r13_reag.T400.aimd.rdf.csv",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r13_reag.T400.aimd.rdf.csv",
+      "sha256": "0280f0902c14e5e0d9d9114c7adf87f39bdac7919eeec57bc3d1b612dcdcf15b",
+      "bytes": 141678,
+      "source_mtime": "2026-11-18T13:54:27+00:00"
+    },
+    {
+      "path": "r13_reag.T400.aimd.rdf.json",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r13_reag.T400.aimd.rdf.json",
+      "sha256": "92d025566fefd8753fa2ee58cd1859598205d341f195d9f71d9db8becbdf8767",
+      "bytes": 2174,
+      "source_mtime": "2026-11-18T13:54:27+00:00"
+    },
+    {
+      "path": "r13_reag.T450.aimd.rdf.csv",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r13_reag.T450.aimd.rdf.csv",
+      "sha256": "d73ea564bc922c89ebfbbbe645b44638cc7374b4a9c16599f5dd37d9f2f1ea89",
+      "bytes": 141662,
+      "source_mtime": "2026-11-18T13:55:33+00:00"
+    },
+    {
+      "path": "r13_reag.T450.aimd.rdf.json",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r13_reag.T450.aimd.rdf.json",
+      "sha256": "237b6727a731f244ba12b35991f5d23ecf992a09e95c895dced9c9528d938e8f",
+      "bytes": 2174,
+      "source_mtime": "2026-11-18T13:55:33+00:00"
+    },
+    {
+      "path": "r15_ionA.T400.aimd.rdf.csv",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r15_ionA.T400.aimd.rdf.csv",
+      "sha256": "19338cbe7e8f292cd0f39101e8f2f3ac7f6f88dd8c040e6243774f5295197d00",
+      "bytes": 141570,
+      "source_mtime": "2026-11-18T13:54:38+00:00"
+    },
+    {
+      "path": "r15_ionA.T400.aimd.rdf.json",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r15_ionA.T400.aimd.rdf.json",
+      "sha256": "1f35ccad568a8120be0df766cd19bae4bd88712dcfce9186b64f1d923f229f85",
+      "bytes": 1028,
+      "source_mtime": "2026-11-18T13:54:38+00:00"
+    },
+    {
+      "path": "r15_ionB.T400.aimd.rdf.csv",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r15_ionB.T400.aimd.rdf.csv",
+      "sha256": "b887cdf2474f2a3d8100a98d7b7bfde7a2ce0682dfeeca843f130618a85e8deb",
+      "bytes": 141551,
+      "source_mtime": "2026-11-18T13:54:50+00:00"
+    },
+    {
+      "path": "r15_ionB.T400.aimd.rdf.json",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r15_ionB.T400.aimd.rdf.json",
+      "sha256": "51f53fe8b1d0d4bc5403bca856efc871a7e1fe861fe999f306a432766aa9e5c9",
+      "bytes": 2556,
+      "source_mtime": "2026-11-18T13:54:50+00:00"
+    },
+    {
+      "path": "r15_mist.T400.aimd.rdf.csv",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r15_mist.T400.aimd.rdf.csv",
+      "sha256": "82aaac31f8b610e8675b7cb81e529b42c5a657746e422cb82f050ef1b9a45218",
+      "bytes": 141553,
+      "source_mtime": "2026-11-18T13:55:01+00:00"
+    },
+    {
+      "path": "r15_mist.T400.aimd.rdf.json",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r15_mist.T400.aimd.rdf.json",
+      "sha256": "77f1eb6b720672b6ec7ff801ac7b99333fe43f44d6d8787e4f1a45ac6c077ad1",
+      "bytes": 1028,
+      "source_mtime": "2026-11-18T13:55:01+00:00"
+    },
+    {
+      "path": "r15_neut.T400.aimd.rdf.csv",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r15_neut.T400.aimd.rdf.csv",
+      "sha256": "28072201610b061b0371a39a79d559ca0f79281fdf8d213c3f53f3b9b312f6e0",
+      "bytes": 141550,
+      "source_mtime": "2026-11-18T13:55:12+00:00"
+    },
+    {
+      "path": "r15_neut.T400.aimd.rdf.json",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r15_neut.T400.aimd.rdf.json",
+      "sha256": "5b285e17d85e0b1c9337846b59056b344e1dce2d508ca8b3e110a5fe0e36ee87",
+      "bytes": 2556,
+      "source_mtime": "2026-11-18T13:55:12+00:00"
+    },
+    {
+      "path": "r15_reag.T400.aimd.rdf.csv",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r15_reag.T400.aimd.rdf.csv",
+      "sha256": "3aa07a8348d679627b05cc414bf3a19524081230999d36d7dac2d687ed6891a6",
+      "bytes": 141615,
+      "source_mtime": "2026-11-18T13:55:24+00:00"
+    },
+    {
+      "path": "r15_reag.T400.aimd.rdf.json",
+      "source": "/home/eudes/alcl3-urea-store/runs/rdf-aimd-v1/r15_reag.T400.aimd.rdf.json",
+      "sha256": "a2292472977f85765b9a7b4e0350ee844b23328d38d54faf057f9cd7af594cc1",
+      "bytes": 2556,
+      "source_mtime": "2026-11-18T13:55:24+00:00"
+    }
+  ]
+}

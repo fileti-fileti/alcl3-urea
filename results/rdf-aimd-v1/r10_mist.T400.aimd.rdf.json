@@ -1,0 +1,69 @@
+{
+ "atoms": {
+  "Al": 36,
+  "C": 36,
+  "Cl": 108,
+  "H": 144,
+  "N": 72,
+  "O": 36
+ },
+ "box_A": 19.581168,
+ "created": "2026-11-18T10:53:22",
+ "definition": "g: all pairs (intra + inter), minimum image, cubic box; se: standard error of the block means (blocks of consecutive frames); cn: running count of b atoms per a atom up to r_upper",
+ "dr_A": 0.02,
+ "frames_read": 1018,
+ "frames_used": 1001,
+ "mode": "aimd",
+ "name": "r10_mist.T400.aimd",
+ "nblocks": 5,
+ "numpy": "2.4.6",
+ "pairs": [
+  "Al-Cl",
+  "Al-O",
+  "Al-N",
+  "Al-Al",
+  "Cl-Cl",
+  "Cl-H",
+  "O-H",
+  "C-O",
+  "C-N",
+  "N-H"
+ ],
+ "python": "3.11.15",
+ "rdf_version": 1,
+ "repo_commit": "3115ddd0968dbcadb3952aebdb247b2616c125d7",
+ "rmax_A": 9.7,
+ "script_sha256": "7c710bba297009d50a4714a032a20b4d9c28e5eb4cc621b311cc11d6722767a1",
+ "sources": [
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T400/r10_mist/r10_mist-pos-1.part20261017120514.xyz",
+   "sha256": "1b0aba88a0c9c78ea9939ed5973ae690a7dc249c1e0f67d31f46cd75627974d1"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T400/r10_mist/r10_mist-pos-1.part20261017180525.xyz",
+   "sha256": "a3a084add12b7f3da9b37c045766826dfca8b47b5e06dc288342908910cd3ef1"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T400/r10_mist/r10_mist-pos-1.part20261018000534.xyz",
+   "sha256": "11b365edad763b8ca9098c0963994354cbb0278df2b3ad93ed3217b279fea96d"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T400/r10_mist/r10_mist-pos-1.part20261018060545.xyz",
+   "sha256": "46a7f9eea69ef8fa0d8e165736dfe668926ee62874db49b61b388f4d7f790cd7"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T400/r10_mist/r10_mist-pos-1.part20261018120554.xyz",
+   "sha256": "991b072f70790e8d74c793887584bb4941d09b63d03bb64d895688a1fe5f8da3"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T400/r10_mist/r10_mist-pos-1.part20261018180605.xyz",
+   "sha256": "35bfca0d2ba0d1af363032fc5790b38314d27e4d5a1f4064d12a526d26965176"
+  },
+  {
+   "path": "/home/eudes/alcl3_urea_data/02_aimd/T400/r10_mist/r10_mist-pos-1.xyz",
+   "sha256": "9aac72adcac7601de7417ee6441506b84a46a68891854033046b90238b609bb4"
+  }
+ ],
+ "step_first": 0,
+ "step_last": 10000
+}
