@@ -15,17 +15,16 @@ rules and conventions only. Keep it under ~160 lines; history goes to `docs/jour
 ## Hard rules
 - **Never fabricate** numbers, paths, versions, hyperparameters, job IDs, hashes or
   references. Unknown → `TODO(owner): <question>`, and list it in the report.
-- **Fix the reading rule first.** Before any run whose result will support a claim or a
-  comparison, the experiment doc states the question, the metric, the threshold and what
-  counts as yes or no, and `docs/claims.md` gets a *pending* claim with that rule. The rule
-  is never changed after the results are seen; a changed rule makes a new claim.
+- **Fix the reading rule first** (ADR-0017). Before the output of any run that will support
+  a claim or a comparison is analysed, the experiment doc fixes the method (quantity,
+  analysis parameters, how the error is computed) and, for a comparison, when a difference
+  counts (yes / no / inconclusive); `docs/claims.md` gets a *pending* claim with that rule.
+  The rule is never changed after the results are seen; a changed rule makes a new claim.
   Benchmarks, dataset generation/labelling, tests and toy jobs are exempt (still ask-first).
-- **Teach-back** for research/methodology decisions (reading rules, claims, comparisons,
-  metrics): a proposal until the owner explains it in their own words and the agent checks
-  it is right and complete (say exactly what is missing). Paste the owner's words in the ADR.
-- **Infrastructure decisions** (layout, sync, ledger, naming, tooling): the agent explains
-  in ~2 lines, the owner answers "approved"; the ADR records the approval and the agent's
-  justification (ADR-0001).
+- **Decisions** (ADR-0017): no teach-back. The agent proposes in 2–3 lines (what and why),
+  the owner answers "ok"/"approved"; the record keeps the answer and the justification.
+  ADR only for general choices on physics, protocol, analysis method or infrastructure;
+  experiment-specific choices go in the experiment doc, small ones in the journal.
 - **Ask first before:** submitting or cancelling **any** job (until per-machine limits are
   set, ADR-0005); deleting or overwriting files the agent did not create; force-push;
   `sudo` or any system-wide change; anything outside the repo. Existing work directories
@@ -34,8 +33,10 @@ rules and conventions only. Keep it under ~160 lines; history goes to `docs/jour
   Give the owner the command; the owner types it.
 - **Explain commands:** git, SSH, VS Code and Claude Code commands get one line (what and
   why). Shell and Slurm: no explanation unless unusual.
-- **Fair comparisons:** same model and same compute per run; validation data drawn from the
-  training side only; test data never influence a choice.
+- **Fair comparisons:** MD/AIMD: same force field or level of theory, protocol and length for
+  every system compared, same analysis parameters fixed before the results are seen. MLFF:
+  same model and same compute per run; validation data drawn from the training side only;
+  test data never influence a choice.
 - **Style:** simplest design, surgical changes, a check for every step (then run it). Show
   the diff before editing an existing file.
 
@@ -50,10 +51,10 @@ results, commit, push). Skills in `.claude/skills/`; their facts come from
 A finished task leaves the block and goes to the journal entry (Done or Problems).
 
 **Task loop** — every step has a check; run it and report its output:
-1. Decision involved? Research/methodology → teach-back; infrastructure → owner's
-   "approved". Either way an ADR before it is applied.
+1. Decision involved? Propose it in 2–3 lines; owner's "ok" before it is applied; ADR,
+   experiment doc or journal as ADR-0017 says.
 2. Run that will support a claim or comparison? Copy `docs/experiment-template.md`, fix
-   the reading rule and add the *pending* claim before anything runs.
+   the reading rule and add the *pending* claim before its output is analysed.
 3. Job? Ask first; submit from a dir under `runs/`, clean tree, commit recorded.
 4. Ended? At `/end-session`: register results, apply the fixed rule to the claim, cost
    from the ledger.
@@ -123,11 +124,10 @@ A finished task leaves the block and goes to the journal entry (Done or Problems
 
 ## Status
 <!-- BEGIN STATUS -->
-- Updated: 2026-11-13 — neumann
+- Updated: 2026-11-18 — neumann
 - State: template skeleton on neumann (layout, hook, scripts with tests, machine YAMLs,
-  repo settings, skills, docs, ADRs 0001-0011; 0001 Proposed). Not set up on SDumont.
+  repo settings, skills, docs, ADRs 0001-0012 and 0017, all accepted). Not set up on SDumont.
 - Now:
-  - Teach-back on the research rules of ADR-0001 (blocks any experiment doc or claim).
   - Check the session loop: `/end-session` → new session → `/start-session` (guide step 5).
 - Later:
   - SDumont: setup F3/F4, first project from the bootstrap kit (ADR-0012), ledger merge check.
@@ -136,6 +136,6 @@ A finished task leaves the block and goes to the journal entry (Done or Problems
   - Bring template changes into `~/sandbox` through its `template` remote (ADR-0002 path).
   - Env records for the Mac and SDumont (ADR-0007).
 - Waiting on owner: SDumont facts for ADR-0004/0005 (TODO(owner)).
-- Last sync — neumann: 2026-11-13, pushed to origin on top of `ac82332`
+- Last sync — neumann: 2026-11-18, pushed to origin on top of `24a7f02`
 - Last sync — sdumont: never (not cloned)
 <!-- END STATUS -->

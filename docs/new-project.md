@@ -42,8 +42,8 @@ Submit project jobs from a directory under `runs/`, so the ledger can attribute 
   first tasks; Last sync lines: this machine = today, others = never).
 - `docs/journal.md`: first entry `## YYYY-MM-DD — <machine> — Project start` with the
   interview summary.
-- Project ADRs take the next free number (decisions of the interview that differ from
-  the template).
+- Project ADRs are numbered from 0101 (ADR-0017): decisions of the interview that differ
+  from the template.
 - Experiments: copy `docs/experiment-template.md`.
 
 ## 5. Checks
