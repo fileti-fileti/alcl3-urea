@@ -15,6 +15,52 @@ Title: `## YYYY-MM-DD — <machine> — <short title>`.
 
 <!-- NEW ENTRIES BELOW -->
 
+## 2026-11-24 — neumann — Clash-free r1.0 MLMD start boxes (v2); MLMD moves to SDumont
+- Goal: MLMD start boxes without bad contacts; decide how many MLMD runs are needed.
+- Done:
+  - start-session: GitHub origin reachable (repo renamed by the owner; pushed 06:32,
+    `origin/main` = `885174e`).
+  - v1 diagnosis on job 4401 (`sp.out`, `init.xyz`; scratch script): the 134 atoms with
+    |F| > 5 eV/A are all Cl, nearest atom of another molecule at 2.19-2.40 A (Cl 82, H 32,
+    C 7, N 7, O 6); 707 heavy atoms have a heavy intermolecular neighbour < 3.0 A. Cause:
+    `build_seeds.py` gives Al radius 1.8 A and every other atom 1.0 A (tolerance 2.0).
+  - `932e404` `src/contacts.py` (AIMD contact reference, radii by linear program, box check);
+    `cba72d4` `src/repack_radii.py`; `555c757` `--margin`; `acbf11b` `src/export_box_pdb.py`;
+    `169885d` `docs/mlmd-boxes.md`.
+  - Contact references: r1.0 (7 runs, 7007 frames, 16.6 min), r1.3 (7 runs), r1.5 (5 runs,
+    400 K only); radii with margin 0.01 A for all three.
+  - r1.0 `reagentes` and `ionico` rebuilt in `data/boxes/mlmd-v2` (Packmol 21.2.1, conda
+    env `packmol`); shipped as `data/outbox/mlmd-boxes-r1.0-v2.tar.gz` (sha256 `b38c48db…`,
+    full hash in `docs/mlmd-boxes.md`). Context text for the SDumont session given in chat.
+  - Ledger: `cost_ledger.py add`: 0 rows; 6 jobs outside the project skipped.
+- Results: v1 -> v2 contacts below the AIMD minimum 387 -> 0 (reagentes), 280 -> 0 (ionico);
+  smallest Cl...Cl 2.188 -> 3.106 A and 2.198 -> 2.825 A; census unchanged; molecules rigid
+  (RMSD <= 0.0006 A). `docs/mlmd-boxes.md`.
+- Decisions (owner's ok, 2026-11-24):
+  - No DFT GEO_OPT of the boxes; rebuild with one Packmol radius per element (P1); no DFT
+    check of v2.
+  - MLMD pilot (P2): r1.0 `reagentes` vs `ionico` at 400 K; in MLMD the seeds are opposite
+    starts for the convergence check, not hypotheses; the pilot's time to equal speciation
+    sizes the production matrix.
+  - Initial test r1.0 only; r1.3/r1.5 boxes not built (references and radii ready).
+  - MACE and MLMD run in another project on SDumont; this project builds the boxes and ships
+    them as PDB (the machines do not connect; the owner carries them).
+  - Agent's build choice: radius margin 0.01 A after the first ionico build failed by
+    <= 0.0008 A; the acceptance rule was kept.
+- Problems:
+  - First v2 ionico build (margin 0): 11 contacts up to 0.0008 A below the AIMD minimum
+    (Packmol: max violation of target distance 0.009 A).
+  - `contacts.py ref` for r1.0 ran with numpy's default threads (~4.5 headnode cores); later
+    runs with `OMP_NUM_THREADS=1`.
+  - A Monitor waited on `pgrep -f`, which matched its own command line; stopped by hand.
+  - For pairs that can bond (Al-Cl, Al-O, Al-N, N-H, O-H) the AIMD minimum sits at the
+    bond-graph cutoff, so those limits are loose (the census covers accidental bonds).
+  - Packmol >= 20.15 (pbc) is only in conda env `packmol`, not in `configs/machines/neumann.yaml`;
+    module `packmol/20.14.3` is too old.
+  - The owner declined two files (bundle README, SDumont context file); context given in chat.
+- Next: owner carries the bundle to SDumont; settle which steps stay here (labels, training);
+  reference-level decision.
+
 ## 2026-11-24 — neumann — Check of the 08_mlmd_boxes copy; two sessions at once
 - Goal: start-session; bring the 2026-11-21 work into the project (owner's request).
 - Done:
