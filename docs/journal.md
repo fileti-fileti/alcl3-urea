@@ -15,6 +15,29 @@ Title: `## YYYY-MM-DD — <machine> — <short title>`.
 
 <!-- NEW ENTRIES BELOW -->
 
+## 2026-11-24 — neumann — Check of the 08_mlmd_boxes copy; two sessions at once
+- Goal: start-session; bring the 2026-11-21 work into the project (owner's request).
+- Done:
+  - The request had already been carried out by another session running at the same time
+    (`23fa66e`, `bf437c6`, 06:18-06:22); nothing redone.
+  - Independent check: 419 of the 420 files of `08_mlmd_boxes` are identical (sha256) in
+    `data/boxes/mlmd-v1` + `runs/sp-boxes-v1`; the one left out is
+    `r1.0/neutro/sp/sp_r10_neutro-RESTART.wfn`; the only file in the copies not in the
+    original is `runs/sp-boxes-v1/sp_report.csv`. The 5 scripts in `src/` are identical to
+    those in `~/alcl3_urea_data/scripts/` (`cmp`).
+  - Ledger: `cost_ledger.py add`: 0 rows; 6 ended jobs outside the project skipped
+    (Eudes-Jordan, hidrotopia-co2).
+- Results: job 4401: CP2K total time 2973.96 s (`sp.out`, line `CP2K 1 1.0`); sacct
+  Elapsed 2981 s. Energy, ranks, node and forces as in the 2026-11-21 entry.
+- Decisions: none.
+- Problems:
+  - Two Claude sessions worked in this repo at the same time; this one found the task done
+    only by reading `git log`. Risk of conflicting commits.
+  - GitHub origin still unreachable: `git ls-remote origin` gives "Repository not found";
+    `ssh -T git@github-alcl3-urea` greets `fileti-fileti/alcl3-urea-`.
+- Next: owner fixes the GitHub repo name, then `git push -u origin main`; one session per
+  repo at a time.
+
 ## 2026-11-24 — neumann — MLMD boxes into the project; GitHub never pushed
 - Goal: find the large boxes, bring the 2026-11-21 work into the project, close the session.
 - Done:

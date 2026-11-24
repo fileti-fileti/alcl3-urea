@@ -166,6 +166,6 @@ A finished task leaves the block and goes to the journal entry (Done or Problems
 - Waiting on owner: GitHub repo name (key reaches `alcl3-urea-`), then `git push -u origin
   main`; Davi (machine, repo access); where the 10 SDumont runs and the 30-run package for
   Davi live now; LNCC paths; SI and report copies; where the 2026-11-21 work ran from.
-- Last sync — neumann: 2026-11-24, end-of-session commit on top of `23fa66e`; never pushed
+- Last sync — neumann: 2026-11-24, end-of-session commit on top of `bf437c6`; never pushed
 - Last sync — sdumont: never (not cloned)
 <!-- END STATUS -->
