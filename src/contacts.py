@@ -122,7 +122,7 @@ def print_ref(out):
             q["where"]["run"], q["where"]["step"]))
 
 
-def solve_radii(ref):
+def solve_radii(ref, margin=0.0):
     from scipy.optimize import linprog
     seen = [p for p in PAIRS if ref["pairs"][p]["seen"]]
     total = float(sum(ref["pairs"][p]["n_contacts"] for p in seen))
@@ -139,14 +139,16 @@ def solve_radii(ref):
                   method="highs")
     if not res.success:
         sys.exit("linear program failed: " + res.message)
-    radii = {e: round(float(np.ceil(r * 1000) / 1000), 3) for e, r in zip(ELEMENTS, res.x)}
+    radii = {e: round(float(np.ceil((r + margin) * 1000) / 1000), 3)
+             for e, r in zip(ELEMENTS, res.x)}
     return radii, seen
 
 
 def cmd_radii(a):
     with open(a.ref) as f:
         ref = json.load(f)
-    radii, seen = solve_radii(ref)
+    radii, seen = solve_radii(ref, a.margin)
+    print("margin per radius: {} A".format(a.margin))
     print("radii (A): " + "  ".join("{}={}".format(e, radii[e]) for e in ELEMENTS))
     print("{:6s} {:>8s} {:>8s} {:>7s}".format("pair", "dmin", "Ra+Rb", "excess"))
     for p in seen:
@@ -156,9 +158,10 @@ def cmd_radii(a):
                                                      s - ref["pairs"][p]["dmin_A"]))
     if a.output:
         with open(a.output, "w") as f:
-            json.dump({"radii_A": radii, "ref": os.path.abspath(a.ref),
+            json.dump({"radii_A": radii, "ref": os.path.abspath(a.ref), "margin_A": a.margin,
                        "rule": "min sum_pairs w_ab (R_a + R_b), w = contact fraction, "
-                               "s.t. R_a + R_b >= dmin_ab; rounded up to 0.001 A"}, f, indent=1)
+                               "s.t. R_a + R_b >= dmin_ab; plus margin per radius; "
+                               "rounded up to 0.001 A"}, f, indent=1)
             f.write("\n")
         print("wrote", a.output)
 
@@ -206,6 +209,8 @@ def main():
     x = sub.add_parser("radii")
     x.add_argument("ref")
     x.add_argument("-o", "--output")
+    x.add_argument("--margin", type=float, default=0.0,
+                   help="A added to every radius (Packmol meets distances to ~0.01 A)")
     b = sub.add_parser("box")
     b.add_argument("ref")
     b.add_argument("boxes", nargs="+")
