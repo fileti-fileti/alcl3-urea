@@ -103,3 +103,5 @@ neumann,4258,convD,EPYC_9734,COMPLETED,0:0,2026-10-26T13:51:31,2026-10-26T15:19:
 neumann,4259,convD,EPYC_9734,COMPLETED,0:0,2026-10-26T13:51:31,2026-10-26T15:19:12,5261,112,n12,/home/eudes/alcl3_urea_data/conv_test,163.6756,core-hours,2026-11-18T13:28:17+00:00
 neumann,4260,convD,EPYC_9734,COMPLETED,0:0,2026-10-26T13:51:34,2026-10-26T15:18:06,5192,112,n12,/home/eudes/alcl3_urea_data/conv_test,161.5289,core-hours,2026-11-18T13:28:17+00:00
 neumann,4261,convD,EPYC_9734,COMPLETED,0:0,2026-10-26T13:51:34,2026-10-26T15:20:27,5333,112,n12,/home/eudes/alcl3_urea_data/conv_test,165.9156,core-hours,2026-11-18T13:28:17+00:00
+neumann,4400,sp_r10_neutro,batch,FAILED,1:0,2026-11-21T13:21:38,2026-11-21T13:21:38,0,112,None assigned,/home/eudes/alcl3_urea_data/08_mlmd_boxes/r1.0/neutro/sp,0.0000,core-hours,2026-11-24T09:18:25+00:00
+neumann,4401,sp_r10_neutro,EPYC_9734,COMPLETED,0:0,2026-11-21T13:22:29,2026-11-21T14:12:10,2981,112,n12,/home/eudes/alcl3_urea_data/08_mlmd_boxes/r1.0/neutro/sp,92.7422,core-hours,2026-11-24T09:18:25+00:00

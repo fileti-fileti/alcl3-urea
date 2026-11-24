@@ -15,14 +15,17 @@ rules and conventions only. Keep it under ~160 lines; history goes to `docs/jour
   reference for MLMD tests; `docs/rdf.md`). Speciation needs MLMD agreeing from opposite seeds.
 - Labels: one reference level, CP2K version and input for every frame, never mixed with
   sampling energies; splits by trajectory, never by frame.
-- **Confidential** (unpublished): nothing goes to an external service; structures,
-  trajectories and datasets never enter git.
+- **Confidential** (unpublished): nothing goes to an external service except the private
+  GitHub origin (ADR-0012; owner, 2026-11-24); structures, trajectories and datasets never
+  enter git.
 - People: Davi computes the labels (TODO(owner): machine, repo access).
 - Data, neumann: `~/alcl3_urea_data`, legacy, **read-only** (ADR-0008): `00_inputs`,
   `01_geo`, `02_aimd/T{333,400,450}/<sys>` (20 of 30 runs complete here), `conv_test/`
   (cutoff/REL/EPS tests, `sp_template.inp`, `cp2k_data/`), `scripts/`, `cp2k_conv.py`; its
   jobs enter the ledger by `--workdir`. Frame pool onward lives in this repo (`src/`,
   `runs/`, `data/`). SI and report: `data/docs/` (TODO(owner): copy them from the Mac).
+  `08_mlmd_boxes` (made there 2026-11-21) was copied 2026-11-24 to `data/boxes/mlmd-v1`
+  (boxes) and `runs/sp-boxes-v1` (single points); the project copies are the live ones.
 - Data, SDumont: the 10 runs made there (CP2K 2024.3) and the training/MLMD dirs
   (`datasets/vN`, `train`, `md`, `al`): TODO(owner): paths. Repo not set up there yet.
 
@@ -138,23 +141,31 @@ A finished task leaves the block and goes to the journal entry (Done or Problems
 
 ## Status
 <!-- BEGIN STATUS -->
-- Updated: 2026-11-18 — neumann
+- Updated: 2026-11-24 — neumann
 - State: started from lab-template `24e4016` (ADRs 0001-0012, 0017). Legacy dir: GEO_OPT and
   30 AIMD runs ended (20 complete on neumann, 10 on SDumont); convergence stages A, B, D
   ended 2026-10-26 (jobs 4250-4261), `sp_template.inp` written; no frame selected or
-  labelled. Not set up on SDumont.
+  labelled. 35 MLMD boxes (2026-11-21; r 1.0-1.7, 1428-1536 atoms, not equilibrated) in
+  `data/boxes/mlmd-v1`; their CP2K single points in `runs/sp-boxes-v1`, only r1.0/neutro
+  ran (job 4401). Box scripts in `src/` (verbatim). GitHub origin never pushed. Not set up
+  on SDumont.
 - Now:
   - Reference level: keep PBE-D3(BJ)/DZVP or run S7 / basis stage E first (before labelling).
   - Bring the 10 SDumont runs to the neumann store and check them before frame selection.
   - Experiment doc for frame selection and labelling (quotas, splits, QC) before any pick.
 - Later:
-  - Copy the pipeline scripts from the legacy dir into `src/`.
+  - MLMD boxes: other 34 single points (`runs/sp-boxes-v1/submit_sp.sh all`; job 4401: 2981 s,
+    112 ranks) or MACE minimisation; r 1.2/1.4/1.6/1.7 lie outside the AIMD compositions.
+  - `src/make_sp_boxes.py`: Slurm layout from the machine YAML (job 4400), separate box/run
+    trees, record the commit.
+  - Copy the rest of the pipeline scripts from the legacy dir into `src/`.
   - SI v0.4: Table S7 census; CP2K 2024.1 vs 2024.3 energy check; MAX_SCF 50x20 check;
     r = 1.3 density (Liu 2017); production QC of the 30 runs (SI S6.3).
   - SDumont: deploy key, clone, LNCC paths, ledger of the SDumont jobs.
   - SI references into `docs/references.bib` after a Crossref check.
-- Waiting on owner: Davi (machine, repo access); where the 10 SDumont runs and the 30-run
-  package for Davi live now; LNCC paths; SI and report copies (and editable sources).
-- Last sync — neumann: 2026-11-18, pushed to origin on top of `24e4016`
+- Waiting on owner: GitHub repo name (key reaches `alcl3-urea-`), then `git push -u origin
+  main`; Davi (machine, repo access); where the 10 SDumont runs and the 30-run package for
+  Davi live now; LNCC paths; SI and report copies; where the 2026-11-21 work ran from.
+- Last sync — neumann: 2026-11-24, end-of-session commit on top of `23fa66e`; never pushed
 - Last sync — sdumont: never (not cloned)
 <!-- END STATUS -->
