@@ -141,14 +141,15 @@ A finished task leaves the block and goes to the journal entry (Done or Problems
 
 ## Status
 <!-- BEGIN STATUS -->
-- Updated: 2026-11-24 — neumann
+- Updated: 2026-11-28 — neumann
 - State: started from lab-template `24e4016` (ADRs 0001-0012, 0017). Legacy dir: GEO_OPT and
   30 AIMD runs ended (20 complete on neumann, 10 on SDumont); convergence stages A, B, D
   ended 2026-10-26 (jobs 4250-4261), `sp_template.inp` written; no frame selected or
   labelled. MLMD start boxes: v1 (`data/boxes/mlmd-v1`, 35 boxes) has Cl...Cl clashes; v2
-  clash-free r1.0 `reagentes` and `ionico` in `data/boxes/mlmd-v2`, shipped as
-  `data/outbox/mlmd-boxes-r1.0-v2.tar.gz` (`docs/mlmd-boxes.md`). MACE and MLMD run in
-  another project on SDumont (owner, 2026-11-24); pilot: r1.0 opposite starts at 400 K.
+  clash-free r1.0 `reagentes`, `ionico` and `neutro` in `data/boxes/mlmd-v2`, shipped as
+  `data/outbox/mlmd-boxes-r1.0-v2.tar.gz` and `mlmd-boxes-r1.0-neutro-v2.tar.gz`
+  (`docs/mlmd-boxes.md`). MACE and MLMD run in the SDumont project `alcl3-urea-mlmd`
+  (owner, 2026-11-24); pilot: r1.0 starts at 400 K.
   Not set up on SDumont.
 - Now:
   - Reference level: keep PBE-D3(BJ)/DZVP or run S7 / basis stage E first (before labelling).
@@ -163,10 +164,11 @@ A finished task leaves the block and goes to the journal entry (Done or Problems
     r = 1.3 density (Liu 2017); production QC of the 30 runs (SI S6.3).
   - SDumont: deploy key, clone, LNCC paths, ledger of the SDumont jobs.
   - SI references into `docs/references.bib` after a Crossref check.
-- Waiting on owner: carry the r1.0 box bundle to SDumont; which steps stay here now that
+- Waiting on owner: carry `mlmd-boxes-r1.0-neutro-v2.tar.gz` to SDumont `data/inbox/`
+  (confirm the `alcl3-urea-mlmd` path there); which steps stay here now that
   MACE/MLMD run in the SDumont project (frame selection, labels, training?); Davi (machine,
   repo access); where the 10 SDumont runs and the 30-run package for Davi live now; LNCC
   paths; SI and report copies; where the 2026-11-21 work ran from.
-- Last sync — neumann: 2026-11-24, end-of-session commit on top of `169885d`
+- Last sync — neumann: 2026-11-28, end-of-session commit on top of `38e4eb4`
 - Last sync — sdumont: never (not cloned)
 <!-- END STATUS -->

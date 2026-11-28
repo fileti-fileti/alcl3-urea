@@ -15,6 +15,31 @@ Title: `## YYYY-MM-DD — <machine> — <short title>`.
 
 <!-- NEW ENTRIES BELOW -->
 
+## 2026-11-28 — neumann — Third r1.0 start box (neutro) for the SDumont pilot
+- Goal: answer the request of the SDumont project `alcl3-urea-mlmd` (2026-11-28): an
+  r1.0 `neutro` box ([AlCl3(urea)] x 126) with the v2 recipe, shipped as PDB.
+- Done:
+  - `data/boxes/mlmd-v2/r1.0/neutro`: `repack_radii.py` on the v1 input with
+    `radii_r1.0.json` (Packmol seed of v1), Packmol 21.2.1 (26.7 s, max violation of target
+    distance 0); `build_mlmd_boxes.py check/export --ratios r1.0`.
+  - Bundle `data/outbox/mlmd-boxes-r1.0-neutro-v2.tar.gz` (sha256 `6a919bab…`, full hash in
+    `docs/mlmd-boxes.md`): `r1.0_neutro.pdb`, `MANIFEST.csv` (v2 columns),
+    `contacts_check.txt`. Delivery note and transfer commands (neumann -> Mac -> SDumont)
+    given in chat. No code change (HEAD `38e4eb4`).
+  - Ledger: `cost_ledger.py add`: 0 rows; 21 jobs outside the project skipped.
+- Results: neutro v1 -> v2 contacts below the AIMD r1.0 minimum 343 -> 0, smallest Cl...Cl
+  2.193 -> 3.105 A; `extract_species.py` on the shipped PDB: 126 AlCl3U and nothing else,
+  Al CN 4 for all; rigid molecules (RMSD <= 0.0006 A); shipped reagentes/ionico files
+  unchanged (sha256 before/after). `docs/mlmd-boxes.md`.
+- Decisions (owner's ok, 2026-11-28): adduct geometry from the v1 species PDB
+  (`AlCl3U.pdb`, from the DTU SI `Starting_Configuration_Model_P3.xyz`, same source family
+  as reagentes and ionico), not from the r10_neut GEO_OPT; bundle name
+  `mlmd-boxes-r1.0-neutro-v2` (recipe version, seed name).
+- Problems: none. The `alcl3-urea-mlmd` path on SDumont is inferred from ADR-0012
+  (`/prj/acmes/eudes.fileti3/<repo>`), not verified.
+- Next: owner carries the bundle to SDumont `data/inbox/` and checks the sha256 there;
+  which steps stay here (frame selection, labels, training).
+
 ## 2026-11-24 — neumann — Clash-free r1.0 MLMD start boxes (v2); MLMD moves to SDumont
 - Goal: MLMD start boxes without bad contacts; decide how many MLMD runs are needed.
 - Done:

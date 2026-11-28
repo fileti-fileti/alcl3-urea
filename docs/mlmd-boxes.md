@@ -8,6 +8,11 @@
   ionic). They are opposite starts: equilibrium is judged by both runs reaching the same
   speciation (pilot, P2). r = 1.3 and 1.5: contact references and radii computed, boxes
   not built.
+- 2026-11-28, request of the SDumont project (`alcl3-urea-mlmd`): a third r = 1.0 start,
+  `neutro` ([AlCl3(urea)] x 126, urea O-bound), same recipe. Owner's ok: adduct geometry
+  from the v1 species PDB (`AlCl3U.pdb`, extracted from the DTU SI
+  `Starting_Configuration_Model_P3.xyz`, the source family of the other species; Al-O
+  1.785 A), bundle name `mlmd-boxes-r1.0-neutro-v2`.
 
 ## Problem with v1 (`data/boxes/mlmd-v1`, built 2026-11-21)
 - Packmol radii in `build_seeds.py`: Al 1.8 A, every other atom tolerance/2 = 1.0 A, so any
@@ -55,14 +60,17 @@
   equal to `packed.xyz` with types 1 Al 2 C 3 Cl 4 H 5 N 6 O, atoms inside [0, L).
 
 ## Results (r1.0, 2026-11-24)
-| Check | reagentes v1 -> v2 | ionico v1 -> v2 |
-|---|---|---|
-| Contacts below the AIMD dmin | 387 -> 0 | 280 -> 0 |
-| Smallest Cl...Cl (AIMD dmin 2.805 A) | 2.188 -> 3.106 A | 2.198 -> 2.825 A |
-| Census | Al2Cl6 63, urea 126 | AlCl2U2_p 63, AlCl4_m 63 |
-| Max RMSD to species PDB | 0.0006 A | 0.0006 A |
+| Check | reagentes v1 -> v2 | ionico v1 -> v2 | neutro v1 -> v2 (2026-11-28) |
+|---|---|---|---|
+| Contacts below the AIMD dmin | 387 -> 0 | 280 -> 0 | 343 -> 0 |
+| Smallest Cl...Cl (AIMD dmin 2.805 A) | 2.188 -> 3.106 A | 2.198 -> 2.825 A | 2.193 -> 3.105 A |
+| Census | Al2Cl6 63, urea 126 | AlCl2U2_p 63, AlCl4_m 63 | AlCl3U 126 |
+| Max RMSD to species PDB | 0.0006 A | 0.0006 A | 0.0006 A |
 
-- Both: 1512 atoms, L = 29.729979 A, rho = 1.5398 g/cm3 (as v1). Not equilibrated.
+- All: 1512 atoms, L = 29.729979 A, rho = 1.5398 g/cm3 (as v1). Not equilibrated.
+- neutro: `extract_species.py` run on the shipped PDB gives 126 AlCl3U and nothing else,
+  Al coordination 4 for all 126. Building it left the shipped reagentes and ionico files
+  unchanged (sha256 checked before and after).
 - First v2 build without margin: ionico had 11 contacts up to 0.0008 A below dmin (FAIL).
   The acceptance rule was kept; the margin was added and both boxes rebuilt.
 
@@ -73,6 +81,9 @@
 - Transfer bundle: `data/outbox/mlmd-boxes-r1.0-v2/` (2 PDB, `MANIFEST.csv` with sha256,
   `contacts_check.txt`) and `mlmd-boxes-r1.0-v2.tar.gz`
   (sha256 `b38c48db8427cfcbfaaed429b958b43e61ce87fe4891bbfbf656778e1fb2cba7`).
+- Second bundle (2026-11-28): `data/outbox/mlmd-boxes-r1.0-neutro-v2/` (`r1.0_neutro.pdb`,
+  `MANIFEST.csv`, `contacts_check.txt`) and `mlmd-boxes-r1.0-neutro-v2.tar.gz`
+  (sha256 `6a919bab21c81d39d02a798eb884351954632c058393c18d2a5553f239a63b6b`).
 - Scripts: `src/contacts.py` (`932e404`, `555c757`), `src/repack_radii.py` (`cba72d4`),
   `src/export_box_pdb.py` (`acbf11b`).
 
