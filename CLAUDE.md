@@ -150,8 +150,12 @@ A finished task leaves the block and goes to the journal entry (Done or Problems
   `data/outbox/mlmd-boxes-r1.0-v2.tar.gz` and `mlmd-boxes-r1.0-neutro-v2.tar.gz`
   (`docs/mlmd-boxes.md`). MACE and MLMD run in the SDumont project `alcl3-urea-mlmd`
   (owner, 2026-11-24); pilot: r1.0 starts at 400 K.
-  Not set up on SDumont.
+  333 K AIMD for the 7 seeds lacking it (request of the SDumont project):
+  `runs/aimd-t333-v1`, jobs 4421-4427 on n12 (4 running, 3 pending, submitted
+  2026-11-28), ~43 020 core-h estimated. Not set up on SDumont.
 - Now:
+  - Jobs 4421-4427: when they end, QC, census and bundle for the SDumont project
+    (deliverables in the 2026-11-28 journal entry, "333 K AIMD").
   - Reference level: keep PBE-D3(BJ)/DZVP or run S7 / basis stage E first (before labelling).
   - Bring the 10 SDumont runs to the neumann store and check them before frame selection.
   - Experiment doc for frame selection and labelling (quotas, splits, QC) before any pick.
@@ -164,11 +168,13 @@ A finished task leaves the block and goes to the journal entry (Done or Problems
     r = 1.3 density (Liu 2017); production QC of the 30 runs (SI S6.3).
   - SDumont: deploy key, clone, LNCC paths, ledger of the SDumont jobs.
   - SI references into `docs/references.bib` after a Crossref check.
+  - `src/setup_aimd_runs.py`: write the commit into submit.sh at setup time (the job-start
+    `git` call gave `unknown` on n12).
 - Waiting on owner: carry `mlmd-boxes-r1.0-neutro-v2.tar.gz` to SDumont `data/inbox/`
   (confirm the `alcl3-urea-mlmd` path there); which steps stay here now that
   MACE/MLMD run in the SDumont project (frame selection, labels, training?); Davi (machine,
   repo access); where the 10 SDumont runs and the 30-run package for Davi live now; LNCC
   paths; SI and report copies; where the 2026-11-21 work ran from.
-- Last sync — neumann: 2026-11-28, end-of-session commit on top of `38e4eb4`
+- Last sync — neumann: 2026-11-28, end-of-session commit on top of `c379c52`
 - Last sync — sdumont: never (not cloned)
 <!-- END STATUS -->

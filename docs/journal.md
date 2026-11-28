@@ -15,6 +15,47 @@ Title: `## YYYY-MM-DD — <machine> — <short title>`.
 
 <!-- NEW ENTRIES BELOW -->
 
+## 2026-11-28 — neumann — 333 K AIMD for 7 seeds submitted (request of the SDumont project)
+- Goal: request of the SDumont project `alcl3-urea-mlmd` (2026-11-28): AIMD at 333 K for
+  the 7 seeds that lack it (r10_reag, r10_neut, r10_fora, r13_reag, r13_neut, r15_reag,
+  r15_neut), protocol identical to the legacy T333 runs. Deliverables after the runs, per
+  seed: init.xyz, equil.inp, prod.inp, eq_pos.xyz (201 frames), prod_pos.xyz (1001 frames),
+  eq.ener, prod.ener, prod_final.restart; QC, census, manifest rows, tarball + sha256,
+  handoff note with the commit.
+- Done:
+  - `src/setup_aimd_runs.py` (`c379c52`, stdlib only). Inputs come from the template
+    T333/r10_ion with only header comment, PROJECT and ABC changed; check: they differ from
+    T400/<seed> only in the comment and TEMPERATURE lines. init.xyz = T400/<seed>/init.xyz,
+    checked byte-identical to the last GEO_OPT frame and to every other T*/<seed>/init.xyz.
+    Wavefunction guess from `01_geo`; legacy `submit.sh` with job name, ID and GEO path
+    changed; `SETUP.json` (commit, sources, sha256 of every file written).
+  - `runs/aimd-t333-v1/<seed>/` for the 7 seeds (r1.0: 432 atoms, L 19.581168 A; r1.3: 396,
+    19.487537 A; r1.5: 448, 20.550878 A).
+  - Submitted (owner's ok) from the run dirs, clean tree at `c379c52`, n12 layout of the
+    legacy T333 runs: jobs 4421 r15_reag, 4422 r15_neut, 4423 r10_reag, 4424 r10_fora
+    (running on n12); 4425 r10_neut, 4426 r13_reag, 4427 r13_neut (pending; n12 full).
+  - Ledger: `cost_ledger.py add`: 0 rows; 22 jobs outside the project skipped.
+- Results: none yet. At 1:39 h elapsed the 4 running jobs were at equilibration steps
+  194-316, with no error lines in their outputs.
+- Decisions (owner's ok, 2026-11-28):
+  - r13_reag starts from its init.xyz as is: the same start as its 400 and 450 K runs; it
+    already holds one ureate/uronium pair (one urea with 3 H, one with 5 H), formed at
+    GEO_OPT step 201.
+  - Setup by a script (above).
+  - Cost estimate from the ledger (same seeds at T400 on n12): 4960-7147 core-h and
+    44-64 h wall per run, ~43 020 core-h in all.
+  - All 7 stay on n12 ("deixa como está"). Moving r13_reag/r13_neut to n09/n10 (legacy
+    64 MPI x 2 threads layout) was estimated to end the set ~15 h earlier (~98 vs ~113 h)
+    for ~+7 000 core-h (legacy r13 runs there took 67-74 h).
+- Problems: `commit_at_start.txt` (a line the setup script adds to submit.sh) wrote
+  `commit unknown` in the 4 jobs that started: `git -C <repo> rev-parse HEAD` failed on
+  n12 (stderr discarded; cause not verified). The commit is in each `SETUP.json`
+  (`c379c52`) and the tree was clean at submission.
+- Next: watch 4421-4427. When they end: join segments; QC (contiguous steps every 10,
+  constant atom count, finite coordinates, 201 + 1001 frames, mean T, drift of the
+  conserved quantity); census with `extract_species.py` on the production frames plus
+  ureas with 3 or 5 H; manifest rows, tarball + sha256, handoff note.
+
 ## 2026-11-28 — neumann — Third r1.0 start box (neutro) for the SDumont pilot
 - Goal: answer the request of the SDumont project `alcl3-urea-mlmd` (2026-11-28): an
   r1.0 `neutro` box ([AlCl3(urea)] x 126) with the v2 recipe, shipped as PDB.
